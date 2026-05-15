@@ -73,7 +73,7 @@ He smiled before he could stop himself.
 
 He stood at the window for a long second before he went.
 
-The hotel-room rug pressed cold against his bare feet. The Marriott Marquis San Francisco rose thirty-nine floors above Yerba Buena Gardens. His room was on the twenty-fifth, facing east. Down below, the conference center sprawled — *Moscone West* lit in white block letters, *Microsoft Ignite* repeated on every banner across the front, the long arrival line of conference-tagged lanyards already snaking around the block for the morning's keynote pre-registration. Foggy, in the November way San Francisco got foggy at night — a luminous wet blanket that softened the edges of everything and made each streetlamp wear a halo.
+The Marriott Marquis San Francisco rose thirty-nine floors above Yerba Buena Gardens. His room was on the twenty-fifth, facing east. Down below, the conference center sprawled — *Moscone West* lit in white block letters, *Microsoft Ignite* repeated on every banner across the front, the long arrival line of conference-tagged lanyards already snaking around the block for the morning's keynote pre-registration. Foggy, in the November way San Francisco got foggy at night — a luminous wet blanket that softened the edges of everything and made each streetlamp wear a halo.
 
 The dream had been wet too.
 
