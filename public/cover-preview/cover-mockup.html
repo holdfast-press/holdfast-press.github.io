@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Keepers — Cover Mockups</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #0d0e10;
+      font-family: 'Cinzel', serif;
+      padding: 60px 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 80px;
+    }
+
+    h1 {
+      color: #7A8FA8;
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      margin-bottom: -40px;
+    }
+
+    .row {
+      display: flex;
+      gap: 48px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cover-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cover-label {
+      color: #5C5247;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .cover {
+      position: relative;
+      width: 300px;
+      height: 450px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.6);
+    }
+
+    .cover img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+    }
+
+    /* Dark overlay — lightens or darkens as needed per cover */
+    .cover .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(13, 14, 16, 0.55) 0%,
+        rgba(13, 14, 16, 0.1) 35%,
+        rgba(13, 14, 16, 0.0) 55%,
+        rgba(13, 14, 16, 0.45) 100%
+      );
+    }
+
+    .cover .text {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 22px 24px;
+    }
+
+    .cover .top {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .cover .series-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.18em;
+      color: #C9CCD1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);
+      line-height: 1.1;
+    }
+
+    .cover .subtitle {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 9.5px;
+      letter-spacing: 0.22em;
+      color: #9AA3AE;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .cover .bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .cover .rule {
+      width: 32px;
+      height: 1px;
+      background: #5C5247;
+      margin-bottom: 6px;
+    }
+
+    .cover .author {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      color: #9AA3AE;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+      text-transform: uppercase;
+    }
+
+    .cover .imprint {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 8px;
+      letter-spacing: 0.25em;
+      color: #5C5247;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+      text-transform: uppercase;
+    }
+
+    /* Variant: title at bottom (works better for some images) */
+    .cover.title-bottom .text {
+      justify-content: flex-end;
+    }
+
+    .cover.title-bottom .top {
+      display: none;
+    }
+
+    .cover.title-bottom .bottom {
+      gap: 8px;
+    }
+
+    .cover.title-bottom .bottom .series-title {
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      font-size: 26px;
+      letter-spacing: 0.18em;
+      color: #C9CCD1;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
+      line-height: 1.1;
+    }
+
+    .cover.title-bottom .bottom .subtitle {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      color: #9AA3AE;
+      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+      text-transform: uppercase;
+    }
+
+    /* Spine mockup */
+    .spine-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .spine {
+      display: flex;
+      gap: 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+    }
+
+    .spine-side {
+      width: 30px;
+      height: 450px;
+      background: #1A1D24;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spine-text {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      transform: rotate(180deg);
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: #C9CCD1;
+      white-space: nowrap;
+    }
+
+    hr.section-rule {
+      width: 60px;
+      border: none;
+      border-top: 1px solid #3A3F4A;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The Keepers — Cover Mockups</h1>
+
+  <div class="row">
+
+    <!-- Cover A: Direction 2 — Hal at Window (Gemini) -->
+    <div class="cover-wrap">
+      <div class="cover">
+        <img src="Gemini_Generated_Image_6ucl806ucl806ucl.png" alt="Direction 2 — Hal at Window">
+        <div class="overlay"></div>
+        <div class="text">
+          <div class="top">
+            <div class="series-title">THE<br>KEEPERS</div>
+            <div class="subtitle">What the Stones Remember</div>
+          </div>
+          <div class="bottom">
+            <div class="rule"></div>
+            <div class="author">R.J. Thornton</div>
+            <div class="imprint">Holdfast Press</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-label">Direction 2 — Hal at Window</div>
+    </div>
+
+    <!-- Cover B: Direction 1 — Stone (Gemini plain) -->
+    <div class="cover-wrap">
+      <div class="cover">
+        <img src="Gemini_Generated_Image_lcdad8lcdad8lcda.png" alt="Direction 1 — Stone">
+        <div class="overlay"></div>
+        <div class="text">
+          <div class="top">
+            <div class="series-title">THE<br>KEEPERS</div>
+            <div class="subtitle">What the Stones Remember</div>
+          </div>
+          <div class="bottom">
+            <div class="rule"></div>
+            <div class="author">R.J. Thornton</div>
+            <div class="imprint">Holdfast Press</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-label">Direction 1 — Atmospheric Stone</div>
+    </div>
+
+    <!-- Cover C: Direction 1-D — Stone/Hotel Fusion (Gemini best result) -->
+    <div class="cover-wrap">
+      <div class="cover">
+        <img src="Gemini_Generated_Image_6pdc746pdc746pdc.png" alt="Direction 1-D — Stone Hotel Fusion">
+        <div class="overlay"></div>
+        <div class="text">
+          <div class="top">
+            <div class="series-title">THE<br>KEEPERS</div>
+            <div class="subtitle">What the Stones Remember</div>
+          </div>
+          <div class="bottom">
+            <div class="rule"></div>
+            <div class="author">R.J. Thornton</div>
+            <div class="imprint">Holdfast Press</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-label">Direction 1-D — Stone / Hotel Fusion ★</div>
+    </div>
+
+    <!-- Cover D: Kling — Worm's Eye Stone -->
+    <div class="cover-wrap">
+      <div class="cover title-bottom">
+        <img src="kling_20260516_作品__Book_cove_473_0.png" alt="Kling — Worm's Eye Stone">
+        <div class="overlay"></div>
+        <div class="text">
+          <div class="bottom">
+            <div class="series-title">THE<br>KEEPERS</div>
+            <div class="subtitle">What the Stones Remember</div>
+            <div class="rule"></div>
+            <div class="author">R.J. Thornton</div>
+            <div class="imprint">Holdfast Press</div>
+          </div>
+        </div>
+      </div>
+      <div class="cover-label">Kling — Worm's Eye Stone</div>
+    </div>
+
+  </div>
+
+  <hr class="section-rule">
+
+  <!-- Spine mockup for the strongest cover -->
+  <div class="spine-wrap">
+    <div class="cover-label">Spine reference — Direction 1-D</div>
+    <div class="spine">
+      <div class="spine-side">
+        <div class="spine-text">THE KEEPERS &nbsp;&nbsp;·&nbsp;&nbsp; WHAT THE STONES REMEMBER &nbsp;&nbsp;&nbsp;&nbsp; R.J. THORNTON</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
