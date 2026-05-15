@@ -11,51 +11,56 @@
     body {
       background: #0d0e10;
       font-family: 'Cinzel', serif;
-      padding: 60px 40px;
+      padding: 60px 40px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 80px;
+      gap: 72px;
     }
 
-    h1 {
+    .page-title {
       color: #7A8FA8;
       font-family: 'Cinzel', serif;
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 400;
-      letter-spacing: 0.3em;
+      letter-spacing: 0.35em;
       text-transform: uppercase;
       margin-bottom: -40px;
     }
 
     .row {
       display: flex;
-      gap: 48px;
+      gap: 64px;
       justify-content: center;
       flex-wrap: wrap;
+      align-items: flex-start;
     }
 
     .cover-wrap {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 16px;
+      gap: 20px;
     }
 
     .cover-label {
       color: #5C5247;
       font-family: 'Cinzel', serif;
-      font-size: 11px;
-      letter-spacing: 0.25em;
+      font-size: 10px;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
     }
 
+    /* ── COVER SHELL ── */
     .cover {
       position: relative;
-      width: 300px;
-      height: 450px;
+      width: 340px;
+      height: 510px;
       overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 4px 12px rgba(0,0,0,0.6);
+      box-shadow:
+        0 30px 80px rgba(0,0,0,0.85),
+        0 6px 16px rgba(0,0,0,0.6),
+        inset 0 0 0 1px rgba(255,255,255,0.04);
     }
 
     .cover img {
@@ -67,16 +72,17 @@
       object-position: center top;
     }
 
-    /* Dark overlay — lightens or darkens as needed per cover */
+    /* gradient overlay — dark at top and bottom for text legibility */
     .cover .overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(13, 14, 16, 0.55) 0%,
-        rgba(13, 14, 16, 0.1) 35%,
-        rgba(13, 14, 16, 0.0) 55%,
-        rgba(13, 14, 16, 0.45) 100%
+        rgba(10,11,14,0.62) 0%,
+        rgba(10,11,14,0.08) 28%,
+        rgba(10,11,14,0.00) 50%,
+        rgba(10,11,14,0.08) 72%,
+        rgba(10,11,14,0.55) 100%
       );
     }
 
@@ -86,36 +92,40 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 28px 22px 24px;
+      padding: 30px 24px 26px;
     }
 
+    /* ── TOP: series title + subtitle ── */
     .cover .top {
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      gap: 9px;
     }
 
     .cover .series-title {
       font-family: 'Cinzel', serif;
       font-weight: 700;
-      font-size: 26px;
-      letter-spacing: 0.18em;
+      font-size: 30px;
+      letter-spacing: 0.16em;
       color: #C9CCD1;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.9), 0 1px 3px rgba(0,0,0,0.8);
-      line-height: 1.1;
+      text-shadow:
+        0 2px 16px rgba(0,0,0,0.95),
+        0 1px 4px rgba(0,0,0,0.8);
+      line-height: 1.08;
     }
 
     .cover .subtitle {
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: 9.5px;
-      letter-spacing: 0.22em;
+      font-size: 9px;
+      letter-spacing: 0.26em;
       color: #9AA3AE;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
-      line-height: 1.6;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.95);
       text-transform: uppercase;
+      line-height: 1.6;
     }
 
+    /* ── BOTTOM: rule + author + imprint ── */
     .cover .bottom {
       display: flex;
       flex-direction: column;
@@ -123,19 +133,19 @@
     }
 
     .cover .rule {
-      width: 32px;
+      width: 28px;
       height: 1px;
       background: #5C5247;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
     }
 
     .cover .author {
       font-family: 'Cinzel', serif;
       font-weight: 400;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      color: #9AA3AE;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
+      font-size: 11px;
+      letter-spacing: 0.32em;
+      color: #C9CCD1;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.95);
       text-transform: uppercase;
     }
 
@@ -143,96 +153,42 @@
       font-family: 'Cinzel', serif;
       font-weight: 400;
       font-size: 8px;
-      letter-spacing: 0.25em;
+      letter-spacing: 0.28em;
       color: #5C5247;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.95);
       text-transform: uppercase;
     }
 
-    /* Variant: title at bottom (works better for some images) */
-    .cover.title-bottom .text {
-      justify-content: flex-end;
+    /* ── ALL COVERS: same layout ── */
+
+    hr.rule {
+      width: 48px;
+      border: none;
+      border-top: 1px solid #2a2d33;
     }
 
-    .cover.title-bottom .top {
-      display: none;
-    }
-
-    .cover.title-bottom .bottom {
-      gap: 8px;
-    }
-
-    .cover.title-bottom .bottom .series-title {
+    .note {
+      color: #3A3F4A;
       font-family: 'Cinzel', serif;
-      font-weight: 700;
-      font-size: 26px;
-      letter-spacing: 0.18em;
-      color: #C9CCD1;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.9);
-      line-height: 1.1;
-    }
-
-    .cover.title-bottom .bottom .subtitle {
-      font-family: 'Cinzel', serif;
-      font-weight: 400;
       font-size: 9px;
       letter-spacing: 0.22em;
-      color: #9AA3AE;
-      text-shadow: 0 1px 6px rgba(0,0,0,0.9);
       text-transform: uppercase;
-    }
-
-    /* Spine mockup */
-    .spine-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .spine {
-      display: flex;
-      gap: 0;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-    }
-
-    .spine-side {
-      width: 30px;
-      height: 450px;
-      background: #1A1D24;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .spine-text {
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform: rotate(180deg);
-      font-family: 'Cinzel', serif;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: #C9CCD1;
-      white-space: nowrap;
-    }
-
-    hr.section-rule {
-      width: 60px;
-      border: none;
-      border-top: 1px solid #3A3F4A;
+      text-align: center;
+      max-width: 500px;
+      line-height: 2;
     }
   </style>
 </head>
 <body>
 
-  <h1>The Keepers — Cover Mockups</h1>
+  <div class="page-title">The Keepers — Book One Cover Directions</div>
 
   <div class="row">
 
-    <!-- Cover A: Direction 2 — Hal at Window (Gemini) -->
+    <!-- DIRECTION 2: Hal at Window -->
     <div class="cover-wrap">
       <div class="cover">
-        <img src="Gemini_Generated_Image_6ucl806ucl806ucl.png" alt="Direction 2 — Hal at Window">
+        <img src="Gemini_Generated_Image_6ucl806ucl806ucl-cropped.png" alt="Direction 2 — Hal at Window">
         <div class="overlay"></div>
         <div class="text">
           <div class="top">
@@ -249,10 +205,10 @@
       <div class="cover-label">Direction 2 — Hal at Window</div>
     </div>
 
-    <!-- Cover B: Direction 1 — Stone (Gemini plain) -->
+    <!-- DIRECTION 1-D: Stone / Hotel Fusion -->
     <div class="cover-wrap">
       <div class="cover">
-        <img src="Gemini_Generated_Image_lcdad8lcdad8lcda.png" alt="Direction 1 — Stone">
+        <img src="Gemini_Generated_Image_6pdc746pdc746pdc-cropped.png" alt="Direction 1-D — Stone / Hotel Fusion">
         <div class="overlay"></div>
         <div class="text">
           <div class="top">
@@ -266,59 +222,15 @@
           </div>
         </div>
       </div>
-      <div class="cover-label">Direction 1 — Atmospheric Stone</div>
-    </div>
-
-    <!-- Cover C: Direction 1-D — Stone/Hotel Fusion (Gemini best result) -->
-    <div class="cover-wrap">
-      <div class="cover">
-        <img src="Gemini_Generated_Image_6pdc746pdc746pdc.png" alt="Direction 1-D — Stone Hotel Fusion">
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="top">
-            <div class="series-title">THE<br>KEEPERS</div>
-            <div class="subtitle">What the Stones Remember</div>
-          </div>
-          <div class="bottom">
-            <div class="rule"></div>
-            <div class="author">R.J. Thornton</div>
-            <div class="imprint">Holdfast Press</div>
-          </div>
-        </div>
-      </div>
-      <div class="cover-label">Direction 1-D — Stone / Hotel Fusion ★</div>
-    </div>
-
-    <!-- Cover D: Kling — Worm's Eye Stone -->
-    <div class="cover-wrap">
-      <div class="cover title-bottom">
-        <img src="kling_20260516_作品__Book_cove_473_0.png" alt="Kling — Worm's Eye Stone">
-        <div class="overlay"></div>
-        <div class="text">
-          <div class="bottom">
-            <div class="series-title">THE<br>KEEPERS</div>
-            <div class="subtitle">What the Stones Remember</div>
-            <div class="rule"></div>
-            <div class="author">R.J. Thornton</div>
-            <div class="imprint">Holdfast Press</div>
-          </div>
-        </div>
-      </div>
-      <div class="cover-label">Kling — Worm's Eye Stone</div>
+      <div class="cover-label">Direction 1-D — Stone / Hotel Fusion</div>
     </div>
 
   </div>
 
-  <hr class="section-rule">
+  <hr class="rule">
 
-  <!-- Spine mockup for the strongest cover -->
-  <div class="spine-wrap">
-    <div class="cover-label">Spine reference — Direction 1-D</div>
-    <div class="spine">
-      <div class="spine-side">
-        <div class="spine-text">THE KEEPERS &nbsp;&nbsp;·&nbsp;&nbsp; WHAT THE STONES REMEMBER &nbsp;&nbsp;&nbsp;&nbsp; R.J. THORNTON</div>
-      </div>
-    </div>
+  <div class="note">
+    Book One &nbsp;·&nbsp; What the Stones Remember &nbsp;·&nbsp; R.J. Thornton &nbsp;·&nbsp; Holdfast Press
   </div>
 
 </body>
