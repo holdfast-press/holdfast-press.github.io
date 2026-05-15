@@ -1,0 +1,332 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="About R.J. Thornton and Holdfast Press — an independent literary fantasy imprint. Books that hold."
+>
+  <!-- ══════════════════════════════════════════
+       PAGE HEADER
+       Dark: stone deep
+       ══════════════════════════════════════════ -->
+  <section class="page-header" aria-label="About">
+    <div class="header-inner container">
+      <h1 class="page-title">About</h1>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       R.J. THORNTON
+       Light: bone
+       ══════════════════════════════════════════ -->
+  <section class="author-section section" aria-label="About R.J. Thornton">
+    <div class="author-inner container">
+      <p class="section-label accent">The Author</p>
+      <h2 class="author-name display">R.J. Thornton</h2>
+      <hr class="rule-ember" />
+
+      <div class="author-body prose">
+        <p>
+          R.J. Thornton writes literary fantasy for readers who have stood in a hotel bar
+          with old friends and felt, for a moment, that they have been standing in this
+          particular light together for much longer than their CV accounts for.
+        </p>
+        <p>
+          <em>The Keepers</em> is the first series. Set across the modern Microsoft conference
+          circuit and the old stones of the Norse world, it is a story about the things we
+          carry, the people we find again, and the bindings we are born to hold — whether we
+          remember making them or not.
+        </p>
+        <p>
+          Thornton writes under a pen name. The legal name is <em>Rurik Jesper Thornton</em>
+          — a strict anagram of the author's real name, every letter accounted for, none added.
+          Pronounced <em>ROO-rik YES-per THORN-ton.</em> It is on file where it needs to be.
+          It is not the name the public ever sees.
+        </p>
+        <p>
+          Influences: Stephen R. Lawhead for the ley-line realism and the weight of old promises.
+          C.S. Lewis for the friendships that carry the world. J.R.R. Tolkien for the sense that
+          the past is very close and very present. Susanna Clarke for the prose. The Microsoft
+          Ignite conference circuit for the texture of where modern people actually live.
+        </p>
+      </div>
+
+      <blockquote class="author-quote">
+        <p class="display-italic">
+          &ldquo;What we choose to carry, carries us.&rdquo;
+        </p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       HOLDFAST PRESS
+       Dark: stone mid
+       ══════════════════════════════════════════ -->
+  <section class="imprint-section section" aria-label="About Holdfast Press">
+    <div class="imprint-inner container">
+      <p class="section-label accent">The Imprint</p>
+      <h2 class="imprint-name">Holdfast Press</h2>
+      <hr class="rule-ember" />
+
+      <div class="imprint-body prose">
+        <p>
+          <em>Holdfast</em> is an Old English and Old Norse word meaning a stronghold, a thing
+          that endures — also the verb itself, <em>to hold fast.</em> It is, in a single word,
+          what the series is about.
+        </p>
+        <p>
+          Holdfast Press publishes literary fantasy for the bookshelf that takes its fantasies
+          seriously: readers of Lawhead, Tolkien, Lewis, Clarke. Stories in which the friendships
+          are the soul of the book, the losses are real, and the world is stranger and older
+          than it appears.
+        </p>
+        <p>
+          <em>The Keepers</em> is the first series. Future series follow. The imprint is not
+          a vehicle for everything the author writes — it is for the literary-fantasy shelf
+          specifically, and for readers who want to carry something home.
+        </p>
+        <p>
+          The mark is a Norse interlace knot drawn as a single continuous line, forming a
+          nearly-closed ring — with one small break. The ring almost holds. It doesn't quite.
+          The series is literally about bindings that are failing. The mark <em>is</em> that.
+        </p>
+      </div>
+
+      <div class="imprint-colophon">
+        <div class="mark" aria-hidden="true">
+          <svg
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+          >
+            <path
+              d="M 53.49 10.15 A 40 40 0 1 1 46.51 10.15"
+              stroke="currentColor"
+              stroke-width="4.5"
+              stroke-linecap="round"
+            />
+          </svg>
+        </div>
+        <p class="colophon-text accent">
+          Holdfast Press &mdash; Books that hold. &mdash; holdfastpress.com
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       CONTACT
+       Light: bone
+       ══════════════════════════════════════════ -->
+  <section class="contact-section section" aria-label="Contact">
+    <div class="contact-inner container">
+      <p class="section-label accent">Get in Touch</p>
+      <h2 class="contact-heading">Contact</h2>
+      <hr class="rule-ember" />
+
+      <div class="contact-body prose">
+        <p>For general enquiries, press, or to submit a dream:</p>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-type accent">General</span>
+            <a href="mailto:hello@holdfastpress.com">hello@holdfastpress.com</a>
+          </li>
+          <li>
+            <span class="contact-type accent">Press</span>
+            <a href="mailto:press@holdfastpress.com">press@holdfastpress.com</a>
+          </li>
+          <li>
+            <span class="contact-type accent">Author</span>
+            <a href="mailto:rj@holdfastpress.com">rj@holdfastpress.com</a>
+          </li>
+        </ul>
+        <p class="contact-social">
+          Follow the work on
+          <a href="https://x.com/holdfastpress" rel="noopener noreferrer" target="_blank">@holdfastpress</a>.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Page Header ── */
+  .page-header {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    padding: var(--space-lg) var(--space-md);
+    border-bottom: 1px solid var(--color-stone-mid);
+  }
+
+  .header-inner {
+    max-width: var(--max-content);
+  }
+
+  .page-title {
+    font-family: var(--font-header);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-fog);
+  }
+
+  /* ── Author ── */
+  .author-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .author-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .section-label {
+    color: var(--color-iron);
+    font-size: 0.7rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .author-name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: 0.06em;
+    color: var(--color-stone-deep);
+    line-height: 1.1;
+  }
+
+  .author-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: var(--color-stone-deep);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .author-quote {
+    border-left: 2px solid var(--color-ember);
+    padding-left: 1.5rem;
+    margin-top: var(--space-md);
+  }
+
+  .author-quote p {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-stone-deep);
+  }
+
+  /* ── Imprint ── */
+  .imprint-section {
+    background: var(--color-stone-mid);
+    color: var(--color-fog);
+  }
+
+  .imprint-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .imprint-section .section-label {
+    color: var(--color-stone-deep);
+    opacity: 0.7;
+  }
+
+  .imprint-name {
+    font-family: var(--font-header);
+    font-size: clamp(1.4rem, 3.5vw, 2.2rem);
+    letter-spacing: 0.12em;
+    color: var(--color-fog);
+  }
+
+  .imprint-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: var(--color-fog);
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .imprint-colophon {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--color-stone-deep);
+    color: var(--color-stone-deep);
+    opacity: 0.6;
+  }
+
+  .colophon-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--color-stone-mid);
+    opacity: 0.8;
+  }
+
+  /* ── Contact ── */
+  .contact-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .contact-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .contact-heading {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+  }
+
+  .contact-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+
+  .contact-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .contact-list li {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+  }
+
+  .contact-type {
+    width: 5rem;
+    flex-shrink: 0;
+    color: var(--color-iron);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .contact-social {
+    color: var(--color-stone-deep);
+  }
+</style>

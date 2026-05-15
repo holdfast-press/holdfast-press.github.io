@@ -1,0 +1,362 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Holdfast Press"
+  description="Holdfast Press — Books that hold. Publisher of The Keepers series by R.J. Thornton. Literary fantasy for readers of Stephen R. Lawhead, J.R.R. Tolkien, and C.S. Lewis."
+>
+  <!-- ══════════════════════════════════════════
+       HERO — imprint identity
+       Dark full-bleed: stone deep, fog text
+       ══════════════════════════════════════════ -->
+  <section class="hero" aria-label="Holdfast Press">
+    <div class="hero-inner container">
+      <div class="hero-mark mark" aria-hidden="true">
+        <svg
+          viewBox="0 0 100 100"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          width="72"
+          height="72"
+        >
+          <path
+            d="M 53.49 10.15 A 40 40 0 1 1 46.51 10.15"
+            stroke="currentColor"
+            stroke-width="4.5"
+            stroke-linecap="round"
+          />
+        </svg>
+      </div>
+      <h1 class="hero-imprint">Holdfast Press</h1>
+      <p class="hero-tagline display-italic">Books that hold.</p>
+      <p class="hero-sub accent">An independent imprint publishing literary fantasy</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERIES FEATURE — The Keepers
+       Light section: bone background
+       ══════════════════════════════════════════ -->
+  <section class="series-feature section" aria-label="The Keepers series">
+    <div class="series-inner container">
+      <p class="series-label accent">Now Writing — Book One</p>
+      <hr class="rule-ember" />
+      <h2 class="series-title display">The Keepers</h2>
+      <p class="series-subtitle display-italic">What the Stones Remember</p>
+      <p class="series-oneliner">
+        Twelve old friends discover they died together a thousand years ago —
+        and the thing they died to bury is awake again.
+      </p>
+      <p class="series-byline accent">A six-book series by R.J. Thornton</p>
+      <div class="series-cta">
+        <a href="/the-keepers" class="btn btn-ghost-dark">Discover the series</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PULL QUOTE
+       Dark section: stone-mid background
+       ══════════════════════════════════════════ -->
+  <section class="pull-quote-section section" aria-label="From the book">
+    <div class="pull-quote-inner container">
+      <blockquote class="pull-quote display-italic">
+        &ldquo;The binding their fathers died to make is failing.<br />
+        The thing beneath it has not forgotten them.&rdquo;
+      </blockquote>
+      <p class="pull-quote-attr accent">— from <em>What the Stones Remember</em></p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       DREAM CTA — email capture
+       Dark section: stone deep
+       ══════════════════════════════════════════ -->
+  <section class="dream-section section" aria-label="Have you had the dream">
+    <div class="dream-inner container">
+      <p class="dream-rune accent" aria-hidden="true">ᚺᚨᚡᛖ ᛃᛟᚢ ᚺᚨᛞ ᛏᚺᛖ ᛞᚱᛖᚨᛖ</p>
+      <h2 class="dream-heading">Have you had the dream?</h2>
+      <p class="dream-sub display-italic">Submit your dream. We are listening.</p>
+      <form
+        class="email-form"
+        action="#"
+        method="POST"
+        aria-label="Newsletter signup"
+      >
+        <input
+          type="email"
+          name="email"
+          placeholder="your@email.com"
+          required
+          autocomplete="email"
+          aria-label="Email address"
+        />
+        <button type="submit">Send</button>
+      </form>
+      <p class="dream-note accent">No marketing. Just dispatches from the work.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       IMPRINT — about Holdfast Press
+       Light: bone
+       ══════════════════════════════════════════ -->
+  <section class="imprint-section section" aria-label="About Holdfast Press">
+    <div class="imprint-inner container">
+      <h2 class="imprint-heading">About the Imprint</h2>
+      <hr class="rule-ember" />
+      <p class="imprint-body">
+        Holdfast Press publishes literary fantasy for readers of Stephen R.&thinsp;Lawhead,
+        J.R.R.&thinsp;Tolkien, and C.S.&thinsp;Lewis — stories in which the weight of the past
+        is real, the friendships are the soul of the book, and the world is stranger and older
+        than it appears.
+      </p>
+      <p class="imprint-body">
+        <em>The Keepers</em> is the first series. Future series follow. The imprint is for the
+        literary-fantasy bookshelf, and for readers who want to carry something home.
+      </p>
+      <p class="imprint-colophon accent">
+        Holdfast Press &mdash; Books that hold &mdash; holdfastpress.com
+      </p>
+      <a href="/about" class="btn btn-ghost-dark">About R.J. Thornton</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  /* ── Hero ── */
+  .hero {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle atmospheric gradient — the two registers */
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 80% 60% at 50% 100%,
+      rgba(90, 82, 71, 0.18) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-mark {
+    color: var(--color-rune-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-imprint {
+    font-family: var(--font-header);
+    font-size: clamp(2rem, 6vw, 4rem);
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-fog);
+  }
+
+  .hero-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--color-rune-light);
+    letter-spacing: 0.04em;
+  }
+
+  .hero-sub {
+    color: var(--color-stone-mid);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+  }
+
+  /* ── Series Feature ── */
+  .series-feature {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .series-inner {
+    max-width: var(--max-content);
+  }
+
+  .series-label {
+    color: var(--color-iron);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .series-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    letter-spacing: 0.08em;
+    color: var(--color-stone-deep);
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
+  }
+
+  .series-subtitle {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: var(--color-iron);
+    margin-bottom: var(--space-md);
+  }
+
+  .series-oneliner {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--color-stone-deep);
+    max-width: 58ch;
+    margin-bottom: var(--space-sm);
+  }
+
+  .series-byline {
+    color: var(--color-iron);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: var(--space-md);
+  }
+
+  .series-cta {
+    margin-top: var(--space-sm);
+  }
+
+  /* ── Pull Quote ── */
+  .pull-quote-section {
+    background: var(--color-stone-mid);
+    color: var(--color-fog);
+    text-align: center;
+  }
+
+  .pull-quote-inner {
+    max-width: var(--max-content);
+  }
+
+  .pull-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.25rem, 2.5vw, 1.9rem);
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-bone);
+    margin-bottom: var(--space-sm);
+  }
+
+  .pull-quote-attr {
+    color: var(--color-rune-light);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+  }
+  .pull-quote-attr em {
+    font-style: italic;
+    font-family: var(--font-display);
+  }
+
+  /* ── Dream CTA ── */
+  .dream-section {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    text-align: center;
+  }
+
+  .dream-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    max-width: 600px;
+  }
+
+  .dream-rune {
+    color: var(--color-stone-mid);
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    font-family: var(--font-accent);
+  }
+
+  .dream-heading {
+    font-family: var(--font-header);
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    letter-spacing: 0.1em;
+    color: var(--color-fog);
+  }
+
+  .dream-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-rune-light);
+  }
+
+  .dream-note {
+    color: var(--color-stone-mid);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    margin-top: -0.25rem;
+  }
+
+  /* ── Imprint ── */
+  .imprint-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .imprint-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .imprint-heading {
+    font-family: var(--font-header);
+    font-size: 1.1rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .imprint-body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    max-width: var(--max-prose);
+  }
+
+  .imprint-colophon {
+    color: var(--color-iron);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .hero {
+      padding: var(--space-lg) var(--space-md);
+    }
+
+    .pull-quote {
+      text-align: left;
+    }
+  }
+</style>

@@ -1,0 +1,216 @@
+:root {
+  /* Brand palette — branding.md */
+  --color-stone-deep: #1A1D24;
+  --color-stone-mid:  #3A3F4A;
+  --color-fog:        #C9CCD1;
+  --color-ember:      #B6582F;
+  --color-rune-light: #7A8FA8;
+  --color-iron:       #5C5247;
+  --color-bone:       #EDE6D6;
+
+  /* Typography — branding.md */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-header:  'Cinzel', 'Times New Roman', serif;
+  --font-body:    'Lora', Georgia, serif;
+  --font-accent:  'IBM Plex Mono', 'Courier New', monospace;
+
+  /* Spacing */
+  --space-xs:  0.5rem;
+  --space-sm:  1rem;
+  --space-md:  2rem;
+  --space-lg:  4rem;
+  --space-xl:  8rem;
+
+  /* Layout */
+  --max-prose: 68ch;
+  --max-wide:  1200px;
+  --max-content: 800px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bone);
+  color: var(--color-stone-deep);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Headings use Cinzel — stone-carved authority */
+h1, h2, h3, h4 {
+  font-family: var(--font-header);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+}
+
+/* Display text — Cormorant Garamond SemiBold for series titles, taglines */
+.display {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.display-italic {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Links */
+a {
+  color: var(--color-rune-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: var(--color-ember);
+}
+
+/* Accent / mono text */
+.accent {
+  font-family: var(--font-accent);
+  font-size: 0.8em;
+  letter-spacing: 0.08em;
+}
+
+/* Prose containers */
+.prose {
+  max-width: var(--max-prose);
+}
+
+.container {
+  max-width: var(--max-wide);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Section spacing */
+.section {
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* Horizontal rule — a thin ember accent used very sparingly */
+hr.rule {
+  border: none;
+  border-top: 1px solid var(--color-stone-mid);
+  margin: var(--space-lg) 0;
+}
+
+hr.rule-ember {
+  border: none;
+  border-top: 1px solid var(--color-ember);
+  width: 4rem;
+  margin: var(--space-md) 0;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  font-family: var(--font-header);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border: 1px solid currentColor;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.btn-ghost-light {
+  color: var(--color-fog);
+  border-color: var(--color-fog);
+  background: transparent;
+}
+.btn-ghost-light:hover {
+  background: var(--color-fog);
+  color: var(--color-stone-deep);
+}
+
+.btn-ghost-dark {
+  color: var(--color-stone-deep);
+  border-color: var(--color-stone-deep);
+  background: transparent;
+}
+.btn-ghost-dark:hover {
+  background: var(--color-stone-deep);
+  color: var(--color-bone);
+}
+
+/* Email form */
+.email-form {
+  display: flex;
+  gap: 0;
+  max-width: 480px;
+}
+
+.email-form input[type="email"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 1px solid var(--color-fog);
+  background: transparent;
+  color: var(--color-fog);
+  outline: none;
+}
+.email-form input[type="email"]::placeholder {
+  color: var(--color-stone-mid);
+}
+.email-form input[type="email"]:focus {
+  border-color: var(--color-rune-light);
+}
+
+.email-form button {
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-header);
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: var(--color-rune-light);
+  color: var(--color-stone-deep);
+  border: 1px solid var(--color-rune-light);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.email-form button:hover {
+  background: var(--color-fog);
+  border-color: var(--color-fog);
+}
+
+/* The mark — broken binding SVG */
+.mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.mark svg {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  :root {
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+  }
+
+  html {
+    font-size: 17px;
+  }
+
+  .email-form {
+    flex-direction: column;
+  }
+}
