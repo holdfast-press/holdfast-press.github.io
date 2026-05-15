@@ -1,0 +1,325 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  frontmatter: {
+    title: string;
+    chapterLabel: string;
+    subtitle?: string;
+    setting?: string;
+    readingTime?: string;
+    description?: string;
+    prev?: { href: string; label: string };
+    next?: { href: string; label: string };
+  };
+}
+
+const { frontmatter } = Astro.props;
+const {
+  title,
+  chapterLabel,
+  subtitle,
+  setting,
+  readingTime,
+  description,
+  prev,
+  next,
+} = frontmatter;
+---
+
+<BaseLayout
+  title={`${chapterLabel} — The Keepers`}
+  description={description ?? `${chapterLabel}: ${title} — The Keepers: What the Stones Remember by R.J. Thornton`}
+>
+  <!-- ── Chapter header ── -->
+  <header class="chapter-header">
+    <div class="chapter-header-inner container">
+      <p class="series-label accent">
+        The Keepers &middot; What the Stones Remember
+      </p>
+      <p class="chapter-label">{chapterLabel}</p>
+      <h1 class="chapter-title display-italic">{title}</h1>
+      {setting && <p class="chapter-setting display-italic">{setting}</p>}
+      {readingTime && <p class="reading-time accent">{readingTime}</p>}
+    </div>
+  </header>
+
+  <!-- ── Reading area ── -->
+  <div class="reading-area">
+    <article class="prose-article container">
+      <slot />
+
+      <!-- ── Chapter navigation ── -->
+      <nav class="chapter-nav" aria-label="Chapter navigation">
+        <div class="chapter-nav-inner">
+          {prev
+            ? <a href={prev.href} class="nav-link nav-link--prev">
+                <span class="nav-arrow">←</span>
+                <span class="nav-label accent">{prev.label}</span>
+              </a>
+            : <span></span>
+          }
+          <a href="/the-keepers" class="nav-series accent">The Keepers ↑</a>
+          {next
+            ? <a href={next.href} class="nav-link nav-link--next">
+                <span class="nav-label accent">{next.label}</span>
+                <span class="nav-arrow">→</span>
+              </a>
+            : <span></span>
+          }
+        </div>
+      </nav>
+    </article>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* ── Chapter header ── */
+  .chapter-header {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    padding: var(--space-lg) var(--space-md) var(--space-md);
+    text-align: center;
+    border-bottom: 1px solid var(--color-stone-mid);
+  }
+
+  .chapter-header-inner {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .series-label {
+    color: var(--color-stone-mid);
+    font-size: 0.68rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .chapter-label {
+    font-family: var(--font-header);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-rune-light);
+  }
+
+  .chapter-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.6rem, 4vw, 2.8rem);
+    color: var(--color-fog);
+    line-height: 1.2;
+  }
+
+  .chapter-setting {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    color: var(--color-rune-light);
+    opacity: 0.8;
+  }
+
+  .reading-time {
+    color: var(--color-stone-mid);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+  }
+
+  /* ── Reading area ── */
+  .reading-area {
+    background: var(--color-bone);
+    padding: var(--space-lg) var(--space-md) var(--space-xl);
+  }
+
+  .prose-article {
+    max-width: 720px;
+  }
+
+  /* ── Prose typography ── */
+  .prose-article p {
+    font-family: var(--font-body);
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--color-stone-deep);
+    margin-bottom: 1.2em;
+  }
+
+  /* Compact paragraphs — first line indent for the "book" feel */
+  .prose-article p + p {
+    text-indent: 1.5em;
+    margin-top: 0;
+  }
+
+  /* But NOT after an hr, blockquote, or headings */
+  .prose-article hr + p,
+  .prose-article blockquote + p,
+  .prose-article h1 + p,
+  .prose-article h2 + p,
+  .prose-article h3 + p {
+    text-indent: 0;
+  }
+
+  /* ── Emphasis / italics ── */
+  .prose-article em {
+    font-style: italic;
+    /* Lora italic is beautiful — keep it */
+  }
+
+  /* Standalone italic lines — the "Find me." type moments */
+  .prose-article p:has(> em:only-child),
+  .prose-article p em:only-child {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.2em;
+    color: var(--color-stone-deep);
+    text-indent: 0;
+    text-align: center;
+    display: block;
+    margin: 1.5em 0;
+  }
+
+  /* ── Section breaks (hr) ── */
+  .prose-article hr {
+    border: none;
+    text-align: center;
+    margin: 2.5em auto;
+    overflow: visible;
+    height: 0;
+    color: var(--color-iron);
+  }
+
+  .prose-article hr::after {
+    content: '— · —';
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+    color: var(--color-iron);
+    opacity: 0.6;
+  }
+
+  /* ── Blockquotes — phone/text messages ── */
+  .prose-article blockquote {
+    background: var(--color-stone-deep);
+    border-left: 3px solid var(--color-rune-light);
+    margin: 1.5em 0;
+    padding: 1rem 1.5rem;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .prose-article blockquote p {
+    font-family: var(--font-accent);
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-fog);
+    margin: 0.3em 0;
+    text-indent: 0;
+  }
+
+  .prose-article blockquote p + p {
+    text-indent: 0;
+  }
+
+  .prose-article blockquote strong {
+    color: var(--color-rune-light);
+    font-weight: 500;
+  }
+
+  /* ── Headings within prose (chapter sub-headings, "End of..." markers) ── */
+  .prose-article h2,
+  .prose-article h3 {
+    font-family: var(--font-header);
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-iron);
+    text-align: center;
+    margin: 3em 0 1.5em;
+    font-weight: 400;
+  }
+
+  /* "End of Prologue" / "End of Chapter One" — italic Cormorant */
+  .prose-article p:last-of-type em,
+  .prose-article .chapter-end {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-iron);
+    opacity: 0.7;
+  }
+
+  /* ── Chapter navigation ── */
+  .chapter-nav {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(58, 63, 74, 0.2);
+  }
+
+  .chapter-nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-header);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-stone-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-link:hover {
+    color: var(--color-stone-deep);
+  }
+
+  .nav-arrow {
+    font-size: 1rem;
+    font-family: var(--font-body);
+  }
+
+  .nav-series {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-iron);
+    opacity: 0.7;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+  .nav-series:hover {
+    opacity: 1;
+    color: var(--color-rune-light);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 640px) {
+    .reading-area {
+      padding: var(--space-md) var(--space-sm) var(--space-lg);
+    }
+
+    .prose-article p {
+      font-size: 1rem;
+    }
+
+    .prose-article p + p {
+      text-indent: 1em;
+    }
+
+    .chapter-nav-inner {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+</style>

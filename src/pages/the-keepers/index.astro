@@ -148,6 +148,35 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   </section>
 
   <!-- ══════════════════════════════════════════
+       READ — Prologue + Chapter One
+       Light: bone
+       ══════════════════════════════════════════ -->
+  <section class="read-section section" aria-label="Read the opening">
+    <div class="read-inner container">
+      <h2 class="read-heading">Read the Opening</h2>
+      <hr class="rule-ember" />
+      <p class="read-intro">
+        The first frost came early to Eikvik that year. And, far away in the future,
+        a hotel alarm clock was beeping in the dark.
+      </p>
+      <div class="read-links">
+        <a href="/the-keepers/prologue" class="read-card">
+          <span class="read-card-label accent">Prologue</span>
+          <span class="read-card-title display-italic">Embers</span>
+          <span class="read-card-setting accent">The fjord-lands of the North &mdash; ~9 min</span>
+          <span class="read-card-cta accent">Read &rarr;</span>
+        </a>
+        <a href="/the-keepers/chapter-one" class="read-card">
+          <span class="read-card-label accent">Chapter One</span>
+          <span class="read-card-title display-italic">Bar Tab at the Marriott</span>
+          <span class="read-card-setting accent">San Francisco &middot; Microsoft Ignite &mdash; ~27 min</span>
+          <span class="read-card-cta accent">Read &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        DREAM CTA
        Dark: stone-deep
        ══════════════════════════════════════════ -->
@@ -393,6 +422,90 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
   .book-item--current .book-status {
     color: var(--color-ember);
     opacity: 1;
+  }
+
+  /* ── Read section ── */
+  .read-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .read-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .read-heading {
+    font-family: var(--font-header);
+    font-size: 0.95rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .read-intro {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--color-iron);
+    max-width: 52ch;
+  }
+
+  .read-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: var(--space-sm);
+  }
+
+  .read-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem;
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    text-decoration: none;
+    border: 1px solid var(--color-stone-mid);
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .read-card:hover {
+    border-color: var(--color-rune-light);
+    background: var(--color-stone-mid);
+  }
+
+  .read-card-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-stone-mid);
+  }
+
+  .read-card-title {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--color-fog);
+  }
+
+  .read-card-setting {
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--color-rune-light);
+    opacity: 0.8;
+  }
+
+  .read-card-cta {
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--color-rune-light);
+    margin-top: 0.5rem;
+  }
+
+  .read-card:hover .read-card-cta {
+    color: var(--color-fog);
   }
 
   /* ── Dream ── */
