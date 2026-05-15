@@ -59,13 +59,13 @@ He flipped it over.
 
 Forty-seven unread. Four texts. The four were:
 
-> **Kenny (8:01 PM):** u alive lad?? mel and i 2 deep already
+> **Callum (8:01 PM):** u alive lad?? mel and i 2 deep already
 
-> **Kenny (8:03 PM):** were upstairs view lounge come now or perish
+> **Callum (8:03 PM):** were upstairs view lounge come now or perish
 
-> **Mel (8:04 PM):** kenny is being dramatic. we are in fact 1.5 deep. respect the data.
+> **Mel (8:04 PM):** callum is being dramatic. we are in fact 1.5 deep. respect the data.
 
-> **Jan (8:09 PM):** Just landed. On my way. Is Kenny already starting bar fights?
+> **Jan (8:09 PM):** Just landed. On my way. Is Callum already starting bar fights?
 
 He smiled before he could stop himself.
 
@@ -91,25 +91,25 @@ Fourteen years of going to Microsoft Ignite at this hotel had given Hal a useful
 
 He came out of the elevator into a room that was — for one moment, before any of his friends saw him — exactly as it always was. Conference badge ribbons everywhere, like leashes. The peculiar low hum of three hundred people who all worked in some combination of *Microsoft* and *consulting* and were, on the first night of Ignite, allowed to behave like college freshmen. The bay laid out behind the glass in the dark, lit on the water in pieces. The Bay Bridge in the middle distance, threaded with traffic.
 
-Then Kenny saw him.
+Then Callum saw him.
 
-"OY!" Kenny shouted. From halfway across the room. With Kenny's whole chest.
+"OY!" Callum shouted. From halfway across the room. With Callum's whole chest.
 
 Heads turned.
 
 Hal raised one hand. Half wave, half *please-shut-the-hell-up.*
 
-Mel, beside Kenny at the corner banquette, pressed her face into her vodka soda to keep from laughing.
+Mel, beside Callum at the corner banquette, pressed her face into her vodka soda to keep from laughing.
 
-He crossed to them. Kenny was standing already, sleeves rolled up, ginger beard a little wild from the flight, three deep into something on the rocks, and as Hal got close Kenny did the thing he had done at every Ignite since the first one, which was wrap him in a hug that bent him sideways at the spine.
+He crossed to them. Callum was standing already, sleeves rolled up, ginger beard a little wild from the flight, three deep into something on the rocks, and as Hal got close Callum did the thing he had done at every Ignite since the first one, which was wrap him in a hug that bent him sideways at the spine.
 
-"You absolute *bastard,*" Kenny said into the side of his neck. "You took two hours to get here from your *room.*"
+"You absolute *bastard,*" Callum said into the side of his neck. "You took two hours to get here from your *room.*"
 
 "I fell asleep."
 
 "Fell *asleep.*"
 
-"I'm forty-three, Kenny. We don't bounce anymore."
+"I'm forty-three, Callum. We don't bounce anymore."
 
 "*You* don't bounce. *I* bounce."
 
@@ -117,9 +117,9 @@ He crossed to them. Kenny was standing already, sleeves rolled up, ginger beard 
 
 "Mel, am I bouncing?"
 
-"Kenny," Mel said, "you are visibly *not* bouncing. Hal, mate, get over here. Sit. We've started without you, which is your own fault."
+"Callum," Mel said, "you are visibly *not* bouncing. Hal, mate, get over here. Sit. We've started without you, which is your own fault."
 
-He let Kenny have one more squeeze and then sat. Mel slid him a beer she had already ordered for him — Lagunitas IPA, in a pint glass, neither too cold nor too warm, because Mel paid attention to things like that — and clinked her vodka soda against the rim with a small, precise *click.*
+He let Callum have one more squeeze and then sat. Mel slid him a beer she had already ordered for him — Lagunitas IPA, in a pint glass, neither too cold nor too warm, because Mel paid attention to things like that — and clinked her vodka soda against the rim with a small, precise *click.*
 
 "To another year of pretending to be adults," she said.
 
@@ -129,7 +129,7 @@ He let Kenny have one more squeeze and then sat. Mel slid him a beer she had alr
 
 They drank.
 
-For a moment Hal closed his eyes against the cold of the glass on his teeth. He could hear them around him: Kenny saying something to the bartender about a bottle of cheap Scotch, Mel typing something on her phone, the low ambient hush of the room, the small *thuck* of the elevator bell down the hall. He could feel the chain against his sternum and the wallet against his hip. He could feel, without seeing it, the shape of the Bay Bridge in the window glass behind him.
+For a moment Hal closed his eyes against the cold of the glass on his teeth. He could hear them around him: Callum saying something to the bartender about a bottle of cheap Scotch, Mel typing something on her phone, the low ambient hush of the room, the small *thuck* of the elevator bell down the hall. He could feel the chain against his sternum and the wallet against his hip. He could feel, without seeing it, the shape of the Bay Bridge in the window glass behind him.
 
 This was the easiest he was going to be all year.
 
@@ -139,7 +139,7 @@ He opened his eyes.
 
 Jan came in eight minutes later.
 
-Hal saw him before Kenny did because Hal was facing the elevator bank: Jan, all six-foot-three of him, ducking slightly through the doorway out of the elevator the way tall men did even in doors that were tall enough, his beard a little more Viking than it had been three months ago, the same brand of dark flannel shirt he had owned for a decade in some new color (forest green tonight), a small leather duffel still over his shoulder because Jan refused to check baggage.
+Hal saw him before Callum did because Hal was facing the elevator bank: Jan, all six-foot-three of him, ducking slightly through the doorway out of the elevator the way tall men did even in doors that were tall enough, his beard a little more Viking than it had been three months ago, the same brand of dark flannel shirt he had owned for a decade in some new color (forest green tonight), a small leather duffel still over his shoulder because Jan refused to check baggage.
 
 Jan came over without saying anything, set the duffel on the floor beside the banquette, sat down, took the second pint glass Mel had pre-ordered for him without being asked, and said:
 
@@ -177,7 +177,7 @@ Hal took a long pull off the margarita.
 
 "Where's Stefan?" Tony said, putting the phone away.
 
-"Hamburg," Kenny said. "Flying in tomorrow morning. He had something at home."
+"Hamburg," Callum said. "Flying in tomorrow morning. He had something at home."
 
 "Annika?"
 
@@ -189,7 +189,7 @@ Hal took a long pull off the margarita.
 
 "Mihai?"
 
-"Mihai is *here* in the *city,*" Kenny said, "because Mihai is incapable of not maximizing a trip, but Mihai is having dinner with some former colleague tonight and will arrive late and judgmental."
+"Mihai is *here* in the *city,*" Callum said, "because Mihai is incapable of not maximizing a trip, but Mihai is having dinner with some former colleague tonight and will arrive late and judgmental."
 
 "Mihai will arrive *late and Romanian,*" Tony said. "He will be wearing better shoes than all of us combined."
 
@@ -243,7 +243,7 @@ He blinked again.
 
 "I don't actually know. He looked — I don't know. Familiar."
 
-Kenny, who had been describing some calamity that had befallen one of his consulting clients last quarter, looked up. "Where?"
+Callum, who had been describing some calamity that had befallen one of his consulting clients last quarter, looked up. "Where?"
 
 "Don't all turn at once."
 
@@ -267,7 +267,7 @@ The younger sales-engineer was gone. The older man was gone. There were two whis
 
 "I don't know. Forget it. I'm tired. I just landed."
 
-"You landed at *eleven this morning,*" Kenny said. "Which is — what, fifteen hours ago? You should be functional by now."
+"You landed at *eleven this morning,*" Callum said. "Which is — what, fifteen hours ago? You should be functional by now."
 
 "I had a bad night."
 
@@ -283,7 +283,7 @@ He did not, when he glanced back at the four-top a few minutes later, see anyone
 
 The night unspooled the way these nights had unspooled for years.
 
-Kenny told the story about the consulting client who had migrated their entire tenant to a new region without telling the security team and then called Kenny at three in the morning saying *the cloud has stopped working,* and Kenny made Hal laugh in the deep way he hadn't laughed in three weeks.
+Callum told the story about the consulting client who had migrated their entire tenant to a new region without telling the security team and then called Callum at three in the morning saying *the cloud has stopped working,* and Callum made Hal laugh in the deep way he hadn't laughed in three weeks.
 
 Mel told the story about catching her seven-year-old reading her MVP nomination letter at the kitchen table and asking, with absolute serious thoughtfulness, whether *most valuable professional* meant Mel was the most valuable mother also, or whether that was a different category.
 
@@ -299,7 +299,7 @@ The bar filled and the bar emptied and the crew didn't move.
 
 Hal drank. He drank slowly, but he drank. By eleven-thirty he was three pints in and warm in his chest in the precise way that meant tomorrow morning would have a small clear bell of pain behind his right eye, and that was fine, it was something to look forward to, it would feel like Ignite.
 
-Around twelve-fifteen, Kenny excused himself to the bathroom, and Jan, while Kenny was gone, leaned across the table toward Hal and said quietly:
+Around twelve-fifteen, Callum excused himself to the bathroom, and Jan, while Callum was gone, leaned across the table toward Hal and said quietly:
 
 "Hal."
 
@@ -317,7 +317,7 @@ Jan nodded.
 
 That was it. That was the entire check-in. That was how Jan checked in, every single Ignite, every single year, every single time. Hal had learned, in the last four years, that the question was always sincere, and that the right answer was always *I'm alright,* even when he wasn't. Especially when he wasn't. Because what Jan was actually asking was *do you want me to stay near you tonight,* and what Hal was actually answering was *I have it tonight, friend, but thank you for being here.*
 
-Jan nodded, and leaned back, and said nothing else about it, and Hal put his hand briefly over Jan's hand on the table, once, and Jan put his other hand over Hal's hand, once, and then they let go, and Kenny came back from the bathroom and the conversation kept going.
+Jan nodded, and leaned back, and said nothing else about it, and Hal put his hand briefly over Jan's hand on the table, once, and Jan put his other hand over Hal's hand, once, and then they let go, and Callum came back from the bathroom and the conversation kept going.
 
 This was the texture of the years.
 
