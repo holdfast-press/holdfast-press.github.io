@@ -1,0 +1,375 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="StoryReader — Holdfast Press"
+  description="StoryReader is a coming app from Holdfast Press. Read or listen to The Keepers and future series — synchronized text and audio, chapter navigation, and cross-device progress sync."
+>
+
+  <!-- ══════════════════════════════════════════
+       HERO
+       ══════════════════════════════════════════ -->
+  <section class="app-hero" aria-label="StoryReader app">
+    <div class="app-hero-inner container">
+      <p class="app-eyebrow accent">Coming Soon</p>
+      <h1 class="app-name">StoryReader</h1>
+      <p class="app-tagline display-italic">Read it. Hear it. Carry it with you.</p>
+      <p class="app-sub">
+        A dedicated reading and listening app for The Keepers and every series
+        that follows — built by Holdfast Press for readers who want the book
+        with them everywhere.
+      </p>
+      <div class="app-notify">
+        <form class="email-form" action="#" method="POST" aria-label="Notify me when StoryReader launches">
+          <input
+            type="email"
+            name="email"
+            placeholder="your@email.com"
+            required
+            autocomplete="email"
+            aria-label="Email address"
+          />
+          <button type="submit">Notify me</button>
+        </form>
+        <p class="app-notify-note accent">Be first to know when it launches.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       FEATURES
+       ══════════════════════════════════════════ -->
+  <section class="features-section section" aria-label="App features">
+    <div class="features-inner container">
+      <h2 class="features-heading accent">What it does</h2>
+      <hr class="rule-ember" />
+      <div class="features-grid">
+
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Read</h3>
+          <p class="feature-body">
+            The full text of every published book — clean, distraction-free,
+            formatted for long reading sessions. Chapter navigation, adjustable
+            type, bookmarks.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Listen</h3>
+          <p class="feature-body">
+            High-quality narration with synchronized text highlighting — follow
+            along as you listen or close your eyes and let the book run.
+            Adjustable speed. Chapter and paragraph navigation.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+              <line x1="12" y1="18" x2="12" y2="18"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">Sync</h3>
+          <p class="feature-body">
+            Your position, bookmarks, and reading progress follow you across every
+            device — phone, tablet, browser. Pick up where you left off, always.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="feature-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" width="28" height="28">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="feature-title">The full catalog</h3>
+          <p class="feature-body">
+            Every Holdfast Press title in one place. As new books in The Keepers
+            series publish, they appear in your library automatically — no manual
+            downloads, no hunting for files.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       PLATFORM
+       ══════════════════════════════════════════ -->
+  <section class="platform-section section" aria-label="Platform availability">
+    <div class="platform-inner container">
+      <blockquote class="platform-quote display-italic">
+        &ldquo;The book should go where you go.&rdquo;
+      </blockquote>
+      <div class="platform-tags">
+        <span class="platform-tag accent">iOS</span>
+        <span class="platform-sep" aria-hidden="true">·</span>
+        <span class="platform-tag accent">Android</span>
+        <span class="platform-sep" aria-hidden="true">·</span>
+        <span class="platform-tag accent">Web</span>
+      </div>
+      <p class="platform-note accent">
+        Native apps for iPhone and Android. Full browser access from any device —
+        no installation required.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+       SERIES TIE-IN
+       ══════════════════════════════════════════ -->
+  <section class="tie-in-section section" aria-label="The Keepers series">
+    <div class="tie-in-inner container">
+      <p class="tie-in-label accent">First title on the platform</p>
+      <hr class="rule-ember" />
+      <h2 class="tie-in-title display">The Keepers</h2>
+      <p class="tie-in-sub display-italic">What the Stones Remember</p>
+      <p class="tie-in-body">
+        StoryReader launches alongside Book One. Read the chapter samples now
+        on holdfastpress.com — the full novel arrives in the app at publication.
+      </p>
+      <a href="/the-keepers" class="btn btn-ghost-dark">Read the series page</a>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ── App Hero ── */
+  .app-hero {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+    padding: var(--space-xl) var(--space-md);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .app-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+      ellipse 70% 50% at 50% 110%,
+      rgba(180, 110, 60, 0.08) 0%,
+      transparent 70%
+    );
+    pointer-events: none;
+  }
+
+  .app-hero-inner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    max-width: 680px;
+  }
+
+  .app-eyebrow {
+    color: var(--color-ember);
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .app-name {
+    font-family: var(--font-header);
+    font-size: clamp(2.4rem, 7vw, 5rem);
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-fog);
+    line-height: 1;
+  }
+
+  .app-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+    color: var(--color-rune-light);
+    letter-spacing: 0.04em;
+  }
+
+  .app-sub {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-stone-mid);
+    max-width: 52ch;
+  }
+
+  .app-notify {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    margin-top: var(--space-sm);
+    width: 100%;
+  }
+
+  .app-notify-note {
+    color: var(--color-stone-mid);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── Features ── */
+  .features-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .features-inner {
+    max-width: var(--max-content);
+  }
+
+  .features-heading {
+    color: var(--color-iron);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+  }
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .feature-icon {
+    color: var(--color-ember);
+  }
+
+  .feature-title {
+    font-family: var(--font-header);
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-stone-deep);
+  }
+
+  .feature-body {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    color: var(--color-iron);
+  }
+
+  /* ── Platform ── */
+  .platform-section {
+    background: var(--color-stone-mid);
+    color: var(--color-fog);
+    text-align: center;
+  }
+
+  .platform-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .platform-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    color: var(--color-bone);
+    line-height: 1.5;
+  }
+
+  .platform-tags {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+  }
+
+  .platform-tag {
+    font-family: var(--font-header);
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-rune-light);
+  }
+
+  .platform-sep {
+    color: var(--color-stone-deep);
+  }
+
+  .platform-note {
+    color: var(--color-stone-mid);
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    max-width: 48ch;
+  }
+
+  /* ── Series tie-in ── */
+  .tie-in-section {
+    background: var(--color-bone);
+    color: var(--color-stone-deep);
+  }
+
+  .tie-in-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .tie-in-label {
+    color: var(--color-iron);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .tie-in-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.08em;
+    color: var(--color-stone-deep);
+    line-height: 1.1;
+  }
+
+  .tie-in-sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: var(--color-iron);
+    margin-top: -0.25rem;
+  }
+
+  .tie-in-body {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--color-stone-deep);
+    max-width: 54ch;
+  }
+</style>

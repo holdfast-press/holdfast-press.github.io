@@ -74,6 +74,7 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
 
         <ul class="nav-links" role="list">
           <li><a href="/the-keepers">The Keepers</a></li>
+          <li><a href="/app">StoryReader App</a></li>
           <li><a href="/about">About</a></li>
         </ul>
       </nav>
@@ -106,6 +107,8 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
         <p class="footer-tagline"><em>Books that hold.</em></p>
         <nav class="footer-nav" aria-label="Footer navigation">
           <a href="/the-keepers">The Keepers</a>
+          <span aria-hidden="true">·</span>
+          <a href="/app">StoryReader</a>
           <span aria-hidden="true">·</span>
           <a href="/about">About</a>
           <span aria-hidden="true">·</span>
