@@ -92,3 +92,13 @@ The Keepers series page should feel like opening a book: intimate, inviting, sli
 ├── logs/             — sessions.jsonl, tokens.jsonl
 └── settings.json     — Claude Code settings
 ```
+
+---
+
+## Subagents available in this repo
+
+- `holdfast-press.github.io-engineer` (model: sonnet) — holdfast-press.github.io frontend engineer — TypeScript, React, Vite, component development, tests
+
+User-level agents (every repo): ``triage-lookup``, ``markdown-prose-editor``, ``azurelocal-domain-expert``, ``mkdocs-material-doctor``, ``turner-module-scaffold-engineer``, ``mms-2026-demo-presenter``.
+
+Platform repo agents (when working in `D:\git\platform`): `orchestration-pm`, `security-waf-caf`, `terraform-validator`, `bicep-validator`, `arm-validator`, `ansible-linter`, `powershell-linter`, `reviewer`, `security-reviewer`, `documenter`, `coder`, `planner`, `operator`, `investigator`, `test-writer`, `router`.
