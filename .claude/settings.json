@@ -7,8 +7,8 @@
       {
         "matcher": "Write|Edit",
         "hooks": [
-          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/block-secrets.ps1" },
-          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/validate-path.ps1" }
+          { "type": "command", "command": "pwsh -NonInteractive -File D:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/block-secrets.ps1" },
+          { "type": "command", "command": "pwsh -NonInteractive -File D:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/validate-path.ps1" }
         ]
       }
     ],
@@ -16,14 +16,14 @@
       {
         "matcher": "Write|Edit",
         "hooks": [
-          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/log-tokens.ps1" }
+          { "type": "command", "command": "pwsh -NonInteractive -File D:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/log-tokens.ps1" }
         ]
       }
     ],
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "pwsh -NonInteractive -File E:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/summarize-session.ps1" }
+          { "type": "command", "command": "pwsh -NonInteractive -File D:/git/holdfast-press/holdfast-press.github.io/.claude/hooks/summarize-session.ps1" }
         ]
       }
     ]
@@ -31,26 +31,31 @@
   "permissions": {
     "allow": [
       "Bash(git add:*)",
-      "Bash(git commit -m ':*)",
+      "Bash(git commit -m \':*)",
       "Bash(git commit:*)",
       "Bash(git push:*)",
       "Bash(git status:*)",
       "Bash(git log:*)",
       "Bash(git diff:*)",
+      "Bash(pwsh -NoProfile -Command \':*)",
+      "Bash(pwsh -NoProfile -File \':*)",
+      "Bash(pwsh -NonInteractive -Command \':*)",
+      "Bash(pwsh -NonInteractive -File \':*)",
       "Bash(gh issue:*)",
       "Bash(gh pr:*)",
       "Bash(gh run:*)",
       "Bash(gh api:*)",
       "Bash(gh workflow:*)",
       "Bash(gh release:*)",
-      "Bash(pwsh -NoProfile -Command ':*)",
-      "Bash(pwsh -NoProfile -File ':*)",
-      "Bash(pwsh -NonInteractive -Command ':*)",
-      "Bash(pwsh -NonInteractive -File ':*)",
-      "Read(//e/git/holdfast-press/holdfast-press.github.io/**)",
+      "Bash(npm:*)",
+      "Bash(npx:*)",
+      "Bash(node:*)",
+      "Bash(tsc:*)",
+      "Read(//d/git/holdfast-press/holdfast-press.github.io/**)",
       "WebSearch",
       "WebFetch(domain:github.com)",
       "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:learn.microsoft.com)",
       "WebFetch(domain:dev.azure.com)"
     ]
   }

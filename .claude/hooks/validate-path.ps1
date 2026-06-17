@@ -1,5 +1,6 @@
 # PreToolUse hook — blocks writes to protected paths
 # Event: PreToolUse Write|Edit
+# Input: JSON from stdin { tool_name, tool_input: { file_path } }
 
 $input_json = $input | Out-String
 try { $payload = $input_json | ConvertFrom-Json } catch { exit 0 }
@@ -9,6 +10,7 @@ if (-not $filePath) { exit 0 }
 
 $normalizedPath = $filePath.Replace('\', '/').ToLower()
 
+# Add or remove paths as needed for your repo
 $blocked = @(
     '/.git/',
     '/node_modules/',

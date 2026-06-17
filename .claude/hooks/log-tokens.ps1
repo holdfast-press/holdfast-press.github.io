@@ -1,7 +1,9 @@
 # PostToolUse hook — logs tool usage to .claude/logs/tokens.jsonl
 # Event: PostToolUse Write|Edit
+# Input: JSON from stdin { tool_name, tool_input, tool_response }
+# Configure: set $logDir to your repo's .claude/logs/ path
 
-$logDir = "E:\git\holdfast-press\holdfast-press.github.io\.claude\logs"
+$logDir = "{{REPO_ROOT}}\.claude\logs"
 
 $input_json = $input | Out-String
 try { $payload = $input_json | ConvertFrom-Json } catch { exit 0 }

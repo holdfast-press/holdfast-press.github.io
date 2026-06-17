@@ -1,7 +1,8 @@
 # Stop hook — logs session end event to .claude/logs/sessions.jsonl
 # Event: Stop
+# Configure: set $logDir to your repo's .claude/logs/ path
 
-$logDir = "E:\git\holdfast-press\holdfast-press.github.io\.claude\logs"
+$logDir = "{{REPO_ROOT}}\.claude\logs"
 
 if (-not (Test-Path $logDir)) { New-Item -ItemType Directory -Path $logDir -Force | Out-Null }
 
