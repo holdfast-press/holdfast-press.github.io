@@ -16,7 +16,7 @@ By the third frost, the grain in the byre had begun to rot from the inside, whic
 
 Halvard had been there. He had held his cousin while Bjarki wept.
 
-What had come out of Tova was not Tova. The thing in her had moved her jaw the way a man moves a puppet, and when Bjarki's axe came down it had laughed — once, soft, with her tongue — before the skull broke. The smell that came out of her was older than rot. Halvard had vomited into the snow and tried to make it look like he had not. He had been sixteen winters old then. He was older now, and worse things had happened, and he had stopped trying to hide it when he was sick.
+What had come out of Tova was not Tova. The thing in her had moved her jaw the way a man moves a puppet, and when Bjarki's axe came down it had laughed — once, soft, with her tongue — before the skull broke. The smell that came out of her was older than rot. Halvard had vomited into the snow and tried to make it look like he had not. He had been twelve winters old then. He was older now, and worse things had happened, and he had stopped trying to hide it when he was sick.
 
 That was a month ago.
 
@@ -62,7 +62,7 @@ The path up to the seer's hut was a path he had not taken since he was a boy. It
 
 Halfway up, he saw the girl.
 
-She was kneeling beside the path with her hands flat on the wet earth and her hair undone in the rain, and she was speaking to the ground in a low, even voice. Sigrún, the seer's apprentice. He had known her since they were children, the way one knows a season. Last summer at the harvest fire she had looked at him across the smoke for a moment too long, and then had not looked at him again, and the not-looking had said more than the looking had.
+She was kneeling beside the path with her hands flat on the wet earth and her hair undone in the rain, and she was speaking to the ground in a low, even voice. Sigrún, the seer's apprentice. He had known her all his life, the way one knows a season. Last summer at the harvest fire she had looked at him across the smoke a moment too long — the way you look at something you have forgotten and are trying to remember — and then had not looked at him again, and neither of them had understood it.
 
 He stopped on the path. She did not lift her head.
 
@@ -128,7 +128,7 @@ It was not a horn the village kept.
 
 Halvard turned toward it and felt his father's hand close on his shoulder. He had not known his father had come down to the strand. Eirik Greybeard's face in the rune-light looked like a face on a coin — hammered and old and far away.
 
-"That is Brand Wolfsbane's horn," his father said quietly. "He has come to take what we hold."
+"That is Wolfsbane's horn," his father said quietly. "He has come to take what we hold."
 
 "Father —"
 

@@ -101,7 +101,7 @@ Hal raised one hand. Half wave, half *please-shut-the-hell-up.*
 
 Mel, beside Callum at the corner banquette, pressed her face into her vodka soda to keep from laughing.
 
-He crossed to them. Callum was standing already, sleeves rolled up, ginger beard a little wild from the flight, three deep into something on the rocks, and as Hal got close Callum did the thing he had done at every Ignite since the first one, which was wrap him in a hug that bent him sideways at the spine.
+He crossed to them. Callum was standing already, sleeves rolled up, a few days of ginger stubble gone a little wild from the flight, three deep into something on the rocks, and as Hal got close Callum did the thing he had done at every Ignite since the first one, which was wrap him in a hug that bent him sideways at the spine.
 
 "You absolute *bastard,*" Callum said into the side of his neck. "You took two hours to get here from your *room.*"
 
@@ -289,7 +289,7 @@ Mel told the story about catching her seven-year-old reading her MVP nomination 
 
 Jan, who never told stories, told the story about how Magnus, his sixteen-year-old, had decided to learn welding, and how the garage now smelled like ozone every weekend, and how Kristine had banned him from welding indoors after a small incident involving a rug and a curtain. Jan delivered this story in a voice that did not change tempo across the entire telling, and they laughed harder for it.
 
-Tony told the story about his husband Marco taking the foster kids to the aquarium and accidentally getting locked in the gift shop.
+Tony told the story about his wife Marisol taking the foster kids to the aquarium and accidentally getting locked in the gift shop.
 
 Sarah Wexler arrived at ten-fifteen looking shellshocked, slid in beside Tony, took the drink Tony slid her without being asked, and said, "I have *just* spent an hour with a vendor who tried to sell me on AI agents being able to file taxes," and they all groaned in unison.
 
