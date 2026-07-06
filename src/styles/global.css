@@ -8,6 +8,10 @@
   --color-iron:       #5C5247;
   --color-bone:       #EDE6D6;
 
+  /* Ember text variants — WCAG AA-safe when ember is used as TEXT (not border/icon) */
+  --color-ember-on-dark:  #D97D52; /* lightened ember for text on stone-deep/stone-mid */
+  --color-ember-on-light: #8C4420; /* deepened ember for text on bone */
+
   /* Typography — branding.md */
   --font-display: 'Cormorant Garamond', Georgia, serif;
   --font-header:  'Cinzel', 'Times New Roman', serif;
@@ -166,7 +170,7 @@ hr.rule-ember {
   outline: none;
 }
 .email-form input[type="email"]::placeholder {
-  color: var(--color-stone-mid);
+  color: var(--color-rune-light);
 }
 .email-form input[type="email"]:focus {
   border-color: var(--color-rune-light);
