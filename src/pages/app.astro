@@ -12,7 +12,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
        ══════════════════════════════════════════ -->
   <section class="app-hero" aria-label="StoryReader app">
     <div class="app-hero-inner container">
-      <p class="app-eyebrow accent">Coming Soon</p>
+      <p class="app-eyebrow accent">Free &middot; Now in Preview</p>
       <h1 class="app-name">StoryReader</h1>
       <p class="app-tagline display-italic">Read it. Hear it. Carry it with you.</p>
       <p class="app-sub">
@@ -20,8 +20,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         that follows — built by Holdfast Press for readers who want the book
         with them everywhere.
       </p>
+      <a href="https://app.holdfastpress.com" class="app-cta">Open StoryReader</a>
+      <p class="app-cta-note accent">
+        Free in any browser — no install required. The prologue and Chapter One
+        of The Keepers are available now, in early preview.
+      </p>
       <div class="app-notify">
-        <form class="email-form" action="#" method="POST" aria-label="Notify me when StoryReader launches">
+        <form class="email-form" action="#" method="POST" aria-label="Notify me as StoryReader grows">
           <input
             type="email"
             name="email"
@@ -32,7 +37,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           />
           <button type="submit">Notify me</button>
         </form>
-        <p class="app-notify-note accent">Be first to know when it launches.</p>
+        <p class="app-notify-note accent">Be first to know as new chapters arrive.</p>
       </div>
     </div>
   </section>
@@ -214,6 +219,32 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     color: var(--color-fog);
     opacity: 0.65;
     max-width: 52ch;
+  }
+
+  .app-cta {
+    display: inline-block;
+    font-family: var(--font-header);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-stone-deep);
+    background: var(--color-ember-on-dark);
+    padding: 0.9rem 2.2rem;
+    text-decoration: none;
+    margin-top: var(--space-sm);
+    transition: opacity 0.2s ease;
+  }
+
+  .app-cta:hover {
+    opacity: 0.85;
+  }
+
+  .app-cta-note {
+    color: var(--color-fog);
+    opacity: 0.65;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    max-width: 44ch;
   }
 
   .app-notify {
