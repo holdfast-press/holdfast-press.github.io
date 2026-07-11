@@ -26,7 +26,8 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 
 **🔴 Blocked on you or external provisioning:**
 7. ✅ **[G4]/[G10]** Story #1 text + audio — DONE 2026-07-11, greenlit + published, manifest v6 verified live.
-8. 🔄 **[A2]** AI voice "Listen" (MAI-Voice-2) — **PLANNING ACTIVE 2026-07-11** (user: "needs to be a planning session, NOT on hold"). Agent researching + writing the step-by-step build plan (`docs/plans/ai-voice-mai-voice-2.md`); Foundry provisioning steps included in the plan.
+8. ✅ **[A2] plan + DECISIONS LOCKED 2026-07-11** (this repo: `docs/plans/ai-voice-mai-voice-2.md`, Decisions section): spend approved (burn credit before reset, then $100/mo cap), preview risk accepted, BOTH apps keep current narrators as defaults + add listen voices **Harper**, **Lisa (en-AU)** ("Isla" corrected), **Ethan in excited style**; Olivia skipped v1; custom Celtic voice = future (CNV limited-access). **Build phase next:** provision shared S0 Speech (eastus), spike (word boundaries/F0/format), audition clips, pipeline `--voices`, app voice picker.
+9. 🔄 **[G12-art] MAI-Image-2.5 research** — NEW 2026-07-11 per user: can it match the existing story illustrations? Agent researching API/deployment/pricing + style-reference (image-to-image) capability + checking `gunnerthelab.github.io/resources/Illustration_Prompts_All_Stories.md` for the original art service. Deliverable: `docs/plans/mai-image-2-5-art-match.md` (this repo). Research only, no spend.
 9. **[verify]** Install / update-prompt / content-sync checks — need your iPhone + iPad + desktop.
 
 *Why I can't literally one-shot all of it: the biggest items need your taste (re-themes), your device (verification), an auth decision (login), or external Azure provisioning (voice). Everything that's purely code, I just do.*

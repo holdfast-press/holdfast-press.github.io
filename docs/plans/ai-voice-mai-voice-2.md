@@ -189,6 +189,15 @@ Decisions needed (short list):
 4. **Preview risk**: comfortable shipping preview-model audio to both apps? Fallback if not: Dragon HD Omni voices (word boundaries documented, HD pricing reduced in March 2026) deliver multi-voice today on the GA-track surface.
 5. **Budget cap default** for the publish guard (`--mai-budget-usd`): is $15/month right?
 
+## Decisions (owner, 2026-07-11)
+
+1. **Spend: APPROVED.** Owner has substantial Azure credit in the target subscription that resets soon; burn what is needed ASAP ("the sooner the better").
+2. **Voices (same set for BOTH brands):** keep each brand's current narrator as the default listen track AND the read-along voice (Gunner `en-US-AndrewMultilingualNeural`, Holdfast `en-GB-Ryan:DragonHDLatestNeural`). Add listen-only options: **Harper** (F, en-US, owner's pick over Olivia: "more upbeat"), **Lisa** (F, en-AU; owner said "Isla," corrected to the actual en-AU voice name), **Ethan** (M, en-US, rendered with the `excited` style since his natural register reads flat; Ethan is the only style-capable male). Olivia: skipped for v1, may revisit with styles.
+3. **Holdfast accent:** accepted. British narrator stays default; en-US/en-AU listen options ship alongside.
+4. **Preview risk: ACCEPTED** (owner: "number 4, option a").
+5. **Budget:** no per-run cap until the owner's subscription credit resets (move fast now); thereafter **$100/month** cap (supersedes the $15 proposal; set `--mai-budget-usd` default and the Azure budget alert to 100).
+6. **Future wish:** a custom Celtic voice via MAI-Voice-2 voice prompting; gated behind the Custom Neural Voice limited-access review. Apply later; not v1.
+
 ## Sources
 
 - What is MAI-Voice (preview)? Microsoft Learn: <https://learn.microsoft.com/azure/ai-services/speech-service/mai-voices>
