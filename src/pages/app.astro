@@ -137,6 +137,74 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <!-- ══════════════════════════════════════════
+       INSTALL / ADD TO DEVICE
+       ══════════════════════════════════════════ -->
+  <section class="install-section section" aria-label="Install StoryReader">
+    <div class="install-inner container">
+      <h2 class="install-heading accent">Add StoryReader to your device</h2>
+      <hr class="rule-ember" />
+      <p class="install-lead">
+        StoryReader installs straight from your browser — no app store, no download.
+        Open <strong>app.holdfastpress.com</strong> on the device you want it on, then
+        follow the steps for your platform.
+      </p>
+      <a href="https://app.holdfastpress.com" class="app-cta install-cta">Open the app</a>
+
+      <div class="install-grid">
+
+        <div class="install-card">
+          <h3 class="install-card-title">iPhone &amp; iPad</h3>
+          <p class="install-card-plat">Safari</p>
+          <ol class="install-steps">
+            <li>Open <strong>app.holdfastpress.com</strong> in Safari.</li>
+            <li>Tap the <strong>Share</strong> button — the square with the up arrow.</li>
+            <li>Scroll down and tap <strong>Add to Home Screen</strong>.</li>
+            <li>Tap <strong>Add</strong>.</li>
+          </ol>
+          <p class="install-card-note">On iPhone and iPad it must be Safari — Chrome can&rsquo;t install web apps.</p>
+        </div>
+
+        <div class="install-card">
+          <h3 class="install-card-title">Android</h3>
+          <p class="install-card-plat">Chrome</p>
+          <ol class="install-steps">
+            <li>Open <strong>app.holdfastpress.com</strong> in Chrome.</li>
+            <li>Tap the <strong>&#8942;</strong> menu (top right).</li>
+            <li>Tap <strong>Add to Home screen</strong> or <strong>Install app</strong>.</li>
+            <li>Confirm.</li>
+          </ol>
+        </div>
+
+        <div class="install-card">
+          <h3 class="install-card-title">Windows</h3>
+          <p class="install-card-plat">Chrome or Edge</p>
+          <ol class="install-steps">
+            <li>Open <strong>app.holdfastpress.com</strong>.</li>
+            <li>Click the <strong>install icon</strong> at the right end of the address bar.</li>
+            <li>Or use <strong>&#8942;</strong> &rarr; <strong>Install this site as an app</strong> (Edge: <strong>&#8943;</strong> &rarr; <strong>Apps</strong>).</li>
+            <li>Click <strong>Install</strong>.</li>
+          </ol>
+        </div>
+
+        <div class="install-card">
+          <h3 class="install-card-title">Mac</h3>
+          <p class="install-card-plat">Chrome or Safari</p>
+          <ol class="install-steps">
+            <li>Open <strong>app.holdfastpress.com</strong>.</li>
+            <li><strong>Chrome:</strong> click the install icon in the address bar, or <strong>&#8942;</strong> &rarr; <strong>Install&hellip;</strong></li>
+            <li><strong>Safari</strong> (macOS Sonoma and later): <strong>File</strong> &rarr; <strong>Add to Dock</strong>.</li>
+          </ol>
+        </div>
+
+      </div>
+
+      <p class="install-foot accent">
+        Prefer not to install? StoryReader runs just as well right in your browser.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
        SERIES TIE-IN
        ══════════════════════════════════════════ -->
   <section class="tie-in-section section" aria-label="The Keepers series">
@@ -361,6 +429,118 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-size: 0.78rem;
     letter-spacing: 0.06em;
     max-width: 48ch;
+  }
+
+  /* ── Install ── */
+  .install-section {
+    background: var(--color-stone-deep);
+    color: var(--color-fog);
+  }
+
+  .install-inner {
+    max-width: var(--max-content);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+
+  .install-heading {
+    color: var(--color-ember-on-dark);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  .install-lead {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-fog);
+    opacity: 0.75;
+    max-width: 54ch;
+  }
+
+  .install-lead strong {
+    color: var(--color-rune-light);
+    opacity: 1;
+    font-weight: 500;
+  }
+
+  .install-cta {
+    margin-top: 0;
+    margin-bottom: var(--space-sm);
+  }
+
+  .install-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--space-md);
+    width: 100%;
+    text-align: left;
+    margin-top: var(--space-sm);
+  }
+
+  .install-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: var(--space-md);
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .install-card-title {
+    font-family: var(--font-header);
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-fog);
+  }
+
+  .install-card-plat {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--color-ember-on-dark);
+    margin-bottom: 0.3rem;
+  }
+
+  .install-steps {
+    font-family: var(--font-body);
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--color-fog);
+    opacity: 0.75;
+    padding-left: 1.2rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .install-steps strong {
+    color: var(--color-rune-light);
+    opacity: 1;
+    font-weight: 500;
+  }
+
+  .install-card-note {
+    font-family: var(--font-body);
+    font-size: 0.82rem;
+    line-height: 1.6;
+    color: var(--color-fog);
+    opacity: 0.55;
+    margin-top: 0.4rem;
+  }
+
+  .install-foot {
+    color: var(--color-fog);
+    opacity: 0.65;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+    margin-top: var(--space-sm);
   }
 
   /* ── Series tie-in ── */
