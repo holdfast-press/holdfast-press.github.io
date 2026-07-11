@@ -107,7 +107,7 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 - ✅ **[H7] Repo visibility** — the-keepers private; all repos audited.
 - ✅ **[G8] Per-repo agents** — story-writer + engineer agents exist across repos. **[H6]** `hp-writer` verified (Lewis/Tolkien/Lawhead).
 - ✅ **[copy] Em-dash purge, both reader apps** — DONE 2026-07-11: holdfast `35bdb1a` (36 fixes/11 files), gunner shipped in `577c3c8` push (33 fixes/11 files). Zero unjustified survivors either side. **Bonus bug found+fixed:** gunner `NowPlaying.tsx` had 4 literal NUL bytes as composite-key delimiters (from `b9f69fe`), breaking the chapter picker — replaced with `/` (`fix(player)` in same push), typecheck+build verified.
-- 💬 **[ops] Fix publish push-notify 401** — attempted `wrangler secret put ADMIN_KEY --env gunner` (sync from `.dev.vars`) but the permission gate requires the USER to explicitly name this secret write. Until synced, story publishes fire NO push to app or site subscribers. User: say "sync the admin key" to proceed.
+- ✅ **[ops] Publish push-notify 401 FIXED** — 2026-07-11, user gave explicit go: `wrangler secret put ADMIN_KEY --env gunner` synced from `.dev.vars` ("Success! Uploaded secret ADMIN_KEY"). All future `publish:gunner` runs notify app + site subscribers. NOT done (gate held it, offer open): retroactive push blast about v6 — user can say "send the story push."
 - 🔴 **ADO** — mirror open items into Azure DevOps (`AB#<id>`) — **ON HOLD per user 2026-07-11** ("hold on this one"). Do not create work items until released.
 
 ---
