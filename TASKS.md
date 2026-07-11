@@ -95,7 +95,7 @@ There are **three installable PWA surfaces** (plus one minor landing site). Each
 - ✅ **[H2] PWA install name** → "Holdfast Press" — `81b2e83`, pushed/deploying.
 - ⬜ **[H1] Re-theme** the app to feel more "Holdfast Press." *(Primary Holdfast work.)*
 - ⬜ **[H4] Real login + cross-device profile (D1)** — same as G6.
-- ⬜ **[A1-app] PWA update notification** — same as Surface 2.
+- ✅ **[A1-app] PWA update notification** — DONE 2026-07-11 (`3c948e8`, pushed/deploying). Root cause was worse than "no UI": `sw.ts` called `skipWaiting()` unconditionally on install, so new SWs silently hijacked open tabs (stale JS vs new SW race). Now: waiting SW → top banner "New version available — Refresh" → tap → SKIP_WAITING → reload. Hourly + on-focus update checks added for iOS. Same bug likely existed in the gunner twin (its agent is on it).
 - ⬜ **[A2/H3] AI voice for Listen (MAI-Voice-2)** — shared Foundry (decided).
 - ✅ **[content] Verify The Keepers publish pipeline** — audited 2026-07-11 (read-only): **fully healthy, zero drift** (manuscript → site repo → parse → state → live manifest → R2). 2 chapters live (prologue f58735e1, chapter-one f5373706), libraryVersion 5 = 5, audio 2/2, all 7 R2 assets HTTP 200. ⚠️ Fragility: `tools/.state/holdfast.json` is gitignored + untracked (same class as gunner's earlier loss) — exists only on this disk. Chapter-two flow: sync manuscript → site repo `src/pages/the-keepers/` first (that's the publish source), then dry-run, then `publish:holdfast`.
 - ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
