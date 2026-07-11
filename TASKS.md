@@ -26,7 +26,7 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 
 **🔴 Blocked on you or external provisioning:**
 7. **[G4]/[G10]** Re-publish Story #1 text + audio — your re-read (text is live on the site).
-8. **[A2]** AI voice "Listen" (MAI-Voice-2) — Azure AI Foundry provisioning in the tenant.
+8. 🔄 **[A2]** AI voice "Listen" (MAI-Voice-2) — **PLANNING ACTIVE 2026-07-11** (user: "needs to be a planning session, NOT on hold"). Agent researching + writing the step-by-step build plan (`docs/plans/ai-voice-mai-voice-2.md`); Foundry provisioning steps included in the plan.
 9. **[verify]** Install / update-prompt / content-sync checks — need your iPhone + iPad + desktop.
 
 *Why I can't literally one-shot all of it: the biggest items need your taste (re-themes), your device (verification), an auth decision (login), or external Azure provisioning (voice). Everything that's purely code, I just do.*
@@ -87,7 +87,7 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 - ⬜ **[G10] Redo Story #1 audio** — on hold for re-read; old-way Azure TTS (`en-US-AndrewMultilingualNeural`) ready.
 - ✅ **[A1-app] PWA update notification** — DONE 2026-07-11 (`bbd949d`, pushed/deploying, run 29159115708). Root cause was double: `main.tsx` bypassed vite-plugin-pwa (bare `serviceWorker.register`) AND `sw.ts` called `skipWaiting()` unconditionally on install → new SWs silently hijacked tabs (traced against workbox-window's 200ms waiting heuristic). Now: waiting SW → app-wide top banner "New version available — Refresh" → tap → SKIP_WAITING handshake → reload; hourly + on-focus update checks for installed iOS PWAs.
 - ⬜ **[A2/G5] AI voice for Listen (MAI-Voice-2)** — multi-voice listen-only; shared Foundry (decided). Keep existing voice for read-along.
-- ⬜ **[G11] Story #1 art** (Horse House, El Paso dinner, skunk gauntlet) + fix stale `resources/Illustration_Prompts_All_Stories.md`. *(Art lives in the site repo but feeds this app's covers.)*
+- ⬜ **[G11] Story #1 art** — scene list re-verified against the FINAL text 2026-07-11 (⚠️ NO Horse House — that beat was cut in the rewrite and parked for a future rural story; do not illustrate it): (1) Dad on the orchard bench watching the boys pick apples, (2) Bear's head in Dad's lap, low gold sun, West Texas highway, (3) dusk wildlife parade (skunk, armadillo, raccoons, deer, owl) in the headlights, (4) Bear's first glad loop of the dark front yard, (5) headlights sweeping farmhouse/barn/pond on arrival. Plus fix stale `resources/Illustration_Prompts_All_Stories.md`. *(Art lives in the site repo but feeds this app's covers.)*
 - ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
 
 ## 🟪 Surface 3 — app.holdfastpress.com  (Holdfast **StoryReader app** PWA) — *primary Holdfast focus*
