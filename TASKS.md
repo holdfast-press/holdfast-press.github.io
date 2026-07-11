@@ -35,14 +35,13 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 
 ## ⭐ The PWA surfaces (this is how the work is organized)
 
-There are **three installable PWA surfaces** (plus one minor landing site). Each is a *separate* PWA with its own service worker, its own update cycle, and its own verification needs — do not conflate them.
+There are **three installable PWA surfaces**. Each is a *separate* PWA with its own service worker, its own update cycle, and its own verification needs — do not conflate them.
 
 | # | Surface | Repo | What it is |
 |---|---|---|---|
 | **1** | **gunnerthelab.com** | `gunnerthelab.github.io` (Astro/Pages) | The Gunner illustrated-storybook **site**, itself an installable PWA (`site.webmanifest` + `sw.js`). |
 | **2** | **app.gunnerthelab.com** | `storyreader-gunner` (Preact + CF Worker/D1/R2) | The Gunner **StoryReader app** (read + listen, sort, offline). |
 | **3** | **app.holdfastpress.com** | `storyreader-holdfast` (same stack) | The Holdfast **StoryReader app** — *the* Holdfast product (The Keepers). |
-| 4 (minor) | holdfast-press.github.io | `holdfast-press.github.io` | Holdfast landing site — low priority (reader-app focus). |
 
 **Update paths (why "the app showed the old story"):**
 - **Site PWA (1):** push → GitHub Pages rebuild → the installed PWA's **`sw.js` must refresh** to show new content. A stale SW serves old pages.
