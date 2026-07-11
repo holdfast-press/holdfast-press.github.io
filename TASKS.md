@@ -1,64 +1,119 @@
 # Cross-Repo Task Tracker
 
-Central backlog for the Gunner-the-Lab and Holdfast-Press sites + their StoryReader PWAs and GitHub orgs.
-Recorded 2026-07-11. **Model rule for these tasks: use Fable or Opus only.** User has granted all needed access.
+Backlog for the Gunner-the-Lab and Holdfast-Press web properties, organized by **PWA surface**.
+Recorded 2026-07-11. **Last updated 2026-07-11** (reorganized by PWA surface per user directive).
+**Model rule: Fable or Opus only.** User has granted all needed access.
 
-> **Issue / work-item tracking = Azure DevOps (ADO), NOT GitHub Issues.**
-> ADO org: `https://dev.azure.com/hybridcloudsolutions`. Holdfast project: **Holdfast Press** (area path `Holdfast Press\Website`); commit format `type(scope): description AB#<id>`. Gunner-the-Lab ADO project: **TBD — confirm with user** (may share a board or need its own).
-> This TASKS.md is a convenience working list; the backlog items below should be **mirrored into ADO work items**. GitHub here means code hosting + org/repo branding (the "GitHub org + repo icons/descriptions" tasks are GitHub *profile* settings, not issue tracking).
+> **Work-item tracking = Azure DevOps (ADO), NOT GitHub Issues.** ADO org `https://dev.azure.com/hybridcloudsolutions`; Holdfast project **Holdfast Press** (area path `Holdfast Press\Website`); commit format `type(scope): description AB#<id>`. Gunner ADO project **TBD**. Mirror these items into ADO. Original task IDs (A1–H7) are kept in brackets for continuity.
 
-Status key: ⬜ not started · 🔄 in progress · ✅ done · 💬 needs a decision/discussion
-
-Repos:
-- `D:/git/gunnerthelab/gunnerthelab.github.io` (site, Astro) — agent: `gunner-story-writer`, `gunnerthelab.github.io-engineer`
-- `D:/git/gunnerthelab/storyreader-gunner` (PWA: Vite+Preact app, Cloudflare Worker/Hono + D1 + R2, md→JSON+TTS pipeline) — agent: `storyreader-gunner-engineer`
-- `D:/git/holdfast-press/holdfast-press.github.io` (site) — agents: `hp-*`
-- `D:/git/holdfast-press/storyreader-holdfast` (PWA, same stack as storyreader-gunner) — agent: `storyreader-holdfast-engineer`
-- `D:/git/holdfast-press/the-keepers` (manuscript/source for Holdfast stories) — agents: `hp-writer`, `hp-editor`, `hp-lore-keeper`, `hp-planner`
+Status key: ⬜ not started · 🔄 in progress · ✅ done · 💬 needs a decision
 
 ---
 
-## A. All repos (both apps)
+## ▶ Execution plan (added 2026-07-11 — "just do the whole board")
 
-- ⬜ **A1. PWA "app update" notification.** When the web/app files are updated (not just when new content is added), the installed PWA must advertise an app update. Implement for BOTH storyreader apps. (Service-worker update flow + user-facing "new version available, refresh" prompt.)
-- 💬 **A2. Microsoft AI voice (MAI-Voice-2) for the "Listen" feature.** Research + (if viable) build. Requirements:
-  - Keep the EXISTING voice for the **read-along** view only (read-along can't move the cursor with a new TTS yet).
-  - For the **listen-only** view, offer **multiple voices** (at least one man + one woman, pick fitting ones from what's available).
-  - Model: https://ai.azure.com/catalog/models/MAI-Voice-2
-  - Decide whether ONE shared Azure AI Foundry project serves BOTH Gunner + Holdfast.
-  - Provision in the **thisismydemo / hybridcloudsolutions** tenant.
-  - If Claude can't fully build it, produce a step-by-step PLAN for the user to build it out.
+Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting; surface 🟡/🔴 as a batch.
 
----
+**🟢 Autonomous — build + verify + ship without waiting:**
+1. **[A1-app]** PWA "new version, refresh" prompt + clean SW update, BOTH reader apps (`vite-plugin-pwa` is already `registerType:'prompt'`, just no UI). Directly targets the "old story on my iPhone" symptom.
+2. **[content]** Verify `publish:holdfast` carries The Keepers chapters correctly (parse → JSON → R2 → manifest).
+3. **[A1-site]** Gunner **site**-PWA update notification + SW cache refresh (separate PWA from the app).
 
-## B. Gunner the Lab
+**🟡 One decision from you, then I run it start to finish:**
+4. **[G2]/[H1]** Re-theme the apps (Gunner warmth / Holdfast literary). I propose 2–3 visual directions each; you pick one.
+5. **[G6]/[H4]** Kill the email-code login; real cross-device profile (D1). Pick the auth model (passkeys / magic-link / Google) and I build it.
+6. **[ADO]** Mirror this board into Azure DevOps — needs the Gunner ADO project call (separate project or shared with Holdfast?).
 
-- ⬜ **G1. Distinct StoryReader icons.** storyreader-gunner currently shares the same browser favicon AND PWA icons as the gunnerthelab.github.io site → confusing. Make them different. Source/sample art may exist in `gunnerthelab.github.io`. (storyreader-gunner-engineer)
-- ⬜ **G2. Re-theme the storyreader-gunner app** to feel more "Gunner the Lab."
-- ⬜ **G3. PWA install name** for storyreader-gunner should include "Gunner the Lab."
-- 💬 **G4. "Change the first story."** Ambiguous — likely: re-publish/sync the newly edited story #1 into the app (+ new audio, see G10). Confirm intent with user. Best-guess disposition: after the site story #1 edit ships, re-run the app publish pipeline for story #1.
-- 💬 **G5. Microsoft AI voice** — see **A2** (Gunner side; shared Foundry project with Holdfast to be decided).
-- ⬜ **G6. Real login + cross-device profile.** User strongly dislikes the magic-link ("email me a sign-in link") flow. Wants a real login that saves a profile (progress, what they're listening to, prefs) across devices → needs profile storage (D1). Note: "thought we fixed this twice, still doesn't show" — verify the account/profile UI actually renders. Also fold in **A1** (advertise app updates).
-- ⬜ **G7. GitHub org + repo icons + descriptions** for the `gunnerthelab` org and its repos. Create nice marks; update descriptions. (See existing memory `gunnerthelab-github-branding` for what's web-UI-only.)
-- ⬜ **G8. Custom agents per repo.** Confirm each gunner repo has agents; gunnerthelab.github.io has a dedicated specialized series-voice writer — `gunner-story-writer` ✅ exists (audited 2026-07-11). Verify others.
-- ⬜ **G9. Reader-app UI for the new metadata.** Wire storyreader-gunner sort UI (Chronological / Recently Released / By Collection) to the `timeframe` / `publishDate` / `era` fields added on the site 2026-07-11. FIRST verify the md→JSON publish pipeline carries `timeframe` through. (see memory `gunner-story-metadata-model`)
-- ⬜ **G10. Redo audio for story #1 "The Voyage Home, Going East."** ✅ Rewrite committed 2026-07-11 (gunner site `bc06986`). NOW regenerate its narration — flagship story, do it "no matter the cost"; update the AI SKU if needed. Ties to A2/G5 voice work.
-- ⬜ **G11. Story #1 art follow-ups (from the rewrite).** New illustrations to generate: (1) "the Horse House" — middle boy meeting the old bay over the fence at dusk (signature new beat); (2) the great-aunt's crowded dinner table in El Paso; (3) the night-critter gauntlet (skunk in the headlights). Orphaned on disk after the edit: `story-01-scene-the-switch.png` and `story-01-scene-06-hour-four.png` (crayon scene cut) — archive or repurpose. Also `resources/Illustration_Prompts_All_Stories.md` is stale for Story 1 (says "Spring 2017", boys "7,5,3", has the cut Hour-Four/crayons prompt) — update era notes + add prompts for the 3 new scenes.
+**🔴 Blocked on you or external provisioning:**
+7. **[G4]/[G10]** Re-publish Story #1 text + audio — your re-read (text is live on the site).
+8. **[A2]** AI voice "Listen" (MAI-Voice-2) — Azure AI Foundry provisioning in the tenant.
+9. **[verify]** Install / update-prompt / content-sync checks — need your iPhone + iPad + desktop.
+
+*Why I can't literally one-shot all of it: the biggest items need your taste (re-themes), your device (verification), an auth decision (login), or external Azure provisioning (voice). Everything that's purely code, I just do.*
 
 ---
 
-## C. Holdfast Press
+## ⭐ The PWA surfaces (this is how the work is organized)
 
-- ⬜ **H1. Re-theme the storyreader-holdfast app** to feel more "Holdfast Press."
-- ⬜ **H2. PWA install name** for storyreader-holdfast → change to something else (PWA name only).
-- 💬 **H3. Microsoft AI voice** — see **A2** (Holdfast side; shared Foundry project with Gunner TBD).
-- ⬜ **H4. Real login + cross-device profile** — same requirement as **G6** (real login, profile storage, cross-device, + **A1** app-update advertising).
-- ⬜ **H5. GitHub org + repo icons + descriptions** for the `holdfast-press` org and repos.
-- ⬜ **H6. Dedicated series-voice writer agent** for the stories repo (the-keepers). Style must be **C.S. Lewis, Tolkien, and Stephen R. Lawhead.** `hp-writer` may already exist — verify it matches that style, upgrade if not.
-- 💬 **H7. Public-repo visibility audit.** Verify which currently-public repos SHOULD remain public; report before changing anything.
+There are **three installable PWA surfaces** (plus one minor landing site). Each is a *separate* PWA with its own service worker, its own update cycle, and its own verification needs — do not conflate them.
+
+| # | Surface | Repo | What it is |
+|---|---|---|---|
+| **1** | **gunnerthelab.com** | `gunnerthelab.github.io` (Astro/Pages) | The Gunner illustrated-storybook **site**, itself an installable PWA (`site.webmanifest` + `sw.js`). |
+| **2** | **app.gunnerthelab.com** | `storyreader-gunner` (Preact + CF Worker/D1/R2) | The Gunner **StoryReader app** (read + listen, sort, offline). |
+| **3** | **app.holdfastpress.com** | `storyreader-holdfast` (same stack) | The Holdfast **StoryReader app** — *the* Holdfast product (The Keepers). |
+| 4 (minor) | holdfast-press.github.io | `holdfast-press.github.io` | Holdfast landing site — low priority (reader-app focus). |
+
+**Update paths (why "the app showed the old story"):**
+- **Site PWA (1):** push → GitHub Pages rebuild → the installed PWA's **`sw.js` must refresh** to show new content. A stale SW serves old pages.
+- **Reader apps (2,3):** `deploy:<brand>` (build + `wrangler deploy`) ships **code/features** — *automatic* on push. `publish:<brand>` (`tools/publish.mjs`, reads the site's markdown → JSON+audio → R2 + manifest) ships **story content** — *manual, must be run after any story edit*.
+- ⇒ A story edit reaches the reader app only after `publish` runs; it reaches the installed site PWA only after its SW updates. **Both need explicit verification.**
+
+---
+
+## 🟢 Decisions resolved 2026-07-11
+- **H7** → `the-keepers` made **PRIVATE** + all repos re-audited (sites public, apps + manuscript private).
+- **Branding pushed + deploying:** G1 icons, G3/H2 PWA names.
+- **A2 voice** → **one shared Azure AI Foundry** for both brands (research/plan queued).
+
+## 🔴 On hold (awaiting user)
+- **[G4] Re-publish Story #1 to the Gunner app** + **[G10] regenerate its audio** — user will **re-read** the corrected text first (LIVE at <https://gunnerthelab.com/stories/01-the-voyage-home-going-east/>) and confirm it's final. Old-way Azure TTS key is in `storyreader-gunner/.dev.vars` (recoverable).
+
+---
+
+## 🔊 Two SEPARATE audio tracks (do not conflate)
+
+1. **[G10] Story #1 re-narration — OLD WAY (one-off).** The edited text needs fresh narration using the **existing** Azure neural voice (`en-US-AndrewMultilingualNeural`; key in `storyreader-gunner/.dev.vars`). A content fix tied to the Story #1 edit. **ON HOLD** until the user re-reads + confirms the text is final. Gunner app (for now).
+2. **[A2] New multi-voice "Listen" feature — NEW WAY (MAI-Voice-2).** A new capability for **both** reader apps: keep the existing voice for **read-along** (it can't move the read cursor with a new TTS yet); for **listen-only**, offer multiple selectable voices (≥1 man + ≥1 woman). Model: MAI-Voice-2. **One shared Azure AI Foundry** (decided), provisioned in the **thisismydemo / hybridcloudsolutions** tenant. If Claude can't fully build it, deliver a step-by-step build PLAN.
+
+---
+
+## 🟦 Surface 1 — gunnerthelab.com  (Gunner **site** PWA)
+
+- ✅ Confirmed it IS an installable PWA (`public/site.webmanifest` + `public/sw.js`, update-detection in `BaseHead.astro`).
+- ✅ Story #1 corrected text **live on the site** (`78ca44d`, Pages deploy succeeded).
+- ⬜ **[A1-site] PWA update notification** — installed site PWA must advertise "new version — refresh" and the SW must cleanly replace stale cache. (Likely cause of "old story on my iPhone.")
+- ⬜ **[verify] Update/propagation check** — after a site push, confirm the *installed* PWA (iPhone + iPad + desktop) actually shows the new content, not an SW-cached old copy.
+- ⬜ **[verify] Install check** — confirm install works + icon/name/splash correct on iOS, iPadOS, desktop.
+
+## 🟩 Surface 2 — app.gunnerthelab.com  (Gunner **StoryReader app** PWA)
+
+- ✅ **[G1] Distinct app icons** (Gunner+Tiger silhouette) — `54f3047`, pushed/deploying.
+- ✅ **[G3] PWA install name** → "Gunner the Lab" — `dfd8e19`, pushed/deploying, build-verified.
+- 🔄 **[G4] Re-publish edited Story #1 content** — on hold for re-read (see On hold). ✅ Prereq done: `tools/.state/gunner.json` reconstructed from the live manifest (at v5, gitignored/local). When greenlit: `publish:gunner --book 01-the-voyage-home-going-east` to re-TTS Story #1. Note the reconstructed state has no per-chapter `blocks`, so block IDs re-derive on that republish — fine for a rewritten story.
+- ⬜ **[G2] Re-theme** the app to feel more "Gunner the Lab."
+- ✅ **[G9] Sort UI** (Story order / Chronological / Recently Released / By Collection) — **DONE + LIVE.** Carried `timeframe` through `parse/gunner.mjs` → `publish.mjs` manifest → app `BookEntry`; reworked the Library sort toggle (commit `4c4223a`, deploy run 29157433825 ✅). *By Collection* renders grouped sections ordered by earliest in-world date. Manifest refreshed to **v5** via a surgical merge — added `timeframe` to all 42 AND shipped the recalibrated `publishDate` cadence that had never been republished (fixes *Recently Released*, which was collapsed onto placeholder dates live). Story #1 content/audio/description left untouched (hold honored).
+- ⬜ **[G6] Real login + cross-device profile (D1)** — kill the disliked email-code flow; "thought we fixed this twice, still doesn't show" → verify the account/profile UI actually renders.
+- ⬜ **[G10] Redo Story #1 audio** — on hold for re-read; old-way Azure TTS (`en-US-AndrewMultilingualNeural`) ready.
+- ⬜ **[A1-app] PWA update notification** — user-facing "new version — refresh" (vite-plugin-pwa `registerType:'prompt'` present but no UI). Ties to the "sort flickers/goes stale" symptom.
+- ⬜ **[A2/G5] AI voice for Listen (MAI-Voice-2)** — multi-voice listen-only; shared Foundry (decided). Keep existing voice for read-along.
+- ⬜ **[G11] Story #1 art** (Horse House, El Paso dinner, skunk gauntlet) + fix stale `resources/Illustration_Prompts_All_Stories.md`. *(Art lives in the site repo but feeds this app's covers.)*
+- ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
+
+## 🟪 Surface 3 — app.holdfastpress.com  (Holdfast **StoryReader app** PWA) — *primary Holdfast focus*
+
+- ✅ **[H2] PWA install name** → "Holdfast Press" — `81b2e83`, pushed/deploying.
+- ⬜ **[H1] Re-theme** the app to feel more "Holdfast Press." *(Primary Holdfast work.)*
+- ⬜ **[H4] Real login + cross-device profile (D1)** — same as G6.
+- ⬜ **[A1-app] PWA update notification** — same as Surface 2.
+- ⬜ **[A2/H3] AI voice for Listen (MAI-Voice-2)** — shared Foundry (decided).
+- ⬜ **[content] Verify The Keepers publish pipeline** (`publish:holdfast`) carries chapters correctly to the app.
+- ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
+
+## ⬜ Surface 4 (minor) — holdfast-press.github.io  (Holdfast landing site)
+- ⬜ Keep as a simple landing that points to the app; **no rich-PWA investment** (reader-app is the Holdfast product).
+
+---
+
+## 🧩 Cross-cutting / infra (mostly done)
+- ✅ **[G7/H5] Org + repo branding** — both orgs: name/description/avatar + polished repo descriptions. (Only social-preview images are web-UI-only.)
+- ✅ **[H7] Repo visibility** — the-keepers private; all repos audited.
+- ✅ **[G8] Per-repo agents** — story-writer + engineer agents exist across repos. **[H6]** `hp-writer` verified (Lewis/Tolkien/Lawhead).
+- ⬜ **ADO** — mirror all ⬜/🔄 items above into Azure DevOps work items (`AB#<id>`).
 
 ---
 
 ## Notes
-- 2026-07-11: Story #1 rewrite is the active piece (site repo). Everything above is queued for AFTER it's committed/pushed.
-- Related memory: `gunner-story-metadata-model`, `gunner-story-writer-agent-audit`, `feedback-story-numbering-and-metadata`, `gunnerthelab-github-branding`, `storyreader-holdfast-rename`.
+- 2026-07-11: Story #1 text is edited + live on the **site**; the **Gunner app** is stale until `publish:gunner` runs (on hold for re-read).
+- 2026-07-11 (later): **G9 shipped + live.** Sort UI deployed to `app.gunnerthelab.com`; content manifest bumped to **v5** with `timeframe` (all 42) + the recalibrated weekly `publishDate` cadence. Installed apps will show the "New content in the library" banner (libraryVersion 4→5) — expected, no new stories. Story #1 body/audio remain the OLD version (G4/G10 still on hold for re-read). Backup of the prior v4 manifest saved to the session scratchpad; revert = re-upload it to `r2://storyreader-gunner-content/manifest.json`.
+- Related memory: `architecture-two-pwas-per-brand`, `session-2026-07-11b-branding-app-staleness`, `feedback-ship-to-device-and-pwa-model`, `gunner-story-metadata-model`, `story-01-rewrite-new-canon`.
