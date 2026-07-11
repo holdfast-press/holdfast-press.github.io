@@ -3,6 +3,10 @@
 Central backlog for the Gunner-the-Lab and Holdfast-Press sites + their StoryReader PWAs and GitHub orgs.
 Recorded 2026-07-11. **Model rule for these tasks: use Fable or Opus only.** User has granted all needed access.
 
+> **Issue / work-item tracking = Azure DevOps (ADO), NOT GitHub Issues.**
+> ADO org: `https://dev.azure.com/hybridcloudsolutions`. Holdfast project: **Holdfast Press** (area path `Holdfast Press\Website`); commit format `type(scope): description AB#<id>`. Gunner-the-Lab ADO project: **TBD — confirm with user** (may share a board or need its own).
+> This TASKS.md is a convenience working list; the backlog items below should be **mirrored into ADO work items**. GitHub here means code hosting + org/repo branding (the "GitHub org + repo icons/descriptions" tasks are GitHub *profile* settings, not issue tracking).
+
 Status key: ⬜ not started · 🔄 in progress · ✅ done · 💬 needs a decision/discussion
 
 Repos:
