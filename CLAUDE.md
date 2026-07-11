@@ -1,104 +1,34 @@
-# CLAUDE.md — holdfast-press.github.io
+# holdfast-press.github.io — Claude Code
 
-Claude Code context for the primary Holdfast Press public website.
+@AGENTS.md
 
-## What this repo is
+<!--
+  This file is a thin shim. All cross-tool repo instructions live in AGENTS.md,
+  imported above via Claude Code's @path syntax (inlined at session launch).
+  Keep only genuinely Claude-Code-specific notes below.
+-->
 
-This is the public-facing website for Holdfast Press, a small independent publisher focused on mythic fiction and literary fantasy. The site serves as the publisher's home: series listings, about the press, reader-facing content, and the first taste of *The Keepers* for prospective readers.
+## Claude Code notes
 
-The site is served via GitHub Pages and is built as static HTML/CSS — no framework required unless complexity demands it.
+- Subagents, skills, and hooks for this repo live in `.claude/`. The repo-level MCP config is `.mcp.json`.
+- Use **plan mode** before broad, repo-wide changes.
+- Follow the `.ai/` session protocol: read `.ai/state/*` at session start, and update `.ai/state/HANDOFF.md` before ending a session.
+- See the [agents standard](https://platform.hybridsolutions.cloud/standards/agents/) for the full multi-model model.
 
-## ADO
 
-| Field | Value |
-|---|---|
-| Organization | https://dev.azure.com/hybridcloudsolutions |
-| Project | Holdfast Press |
-| Area path | Holdfast Press\Website |
-| Commit format | `type(scope): description AB#<id>` |
+## Claude Code actions in this repo
 
-## Repo structure
-
-```
-holdfast-press.github.io/
-├── CLAUDE.md
-├── README.md
-├── index.html          — homepage (publisher identity, series listing)
-├── the-keepers/
-│   ├── index.html      — series landing page
-│   ├── prologue.html   — readable prologue
-│   └── chapter-one.html — readable chapter one
-├── about.html          — about Holdfast Press
-├── css/
-│   └── style.css       — single stylesheet
-├── fonts/              — self-hosted fonts if needed
-└── assets/             — images, cover art, logos
-```
-
-## Visual direction
-
-The site should feel like a literary publishing house — not generic tech or bootstrap-default.
-
-- **Palette:** deep ink tones (near-black, dark slate, aged paper off-white), accents in deep amber or forest green
-- **Typography:** a classic serif for body text (Georgia as fallback; ideally a hosted literary serif), smaller caps or tracked sans-serif for navigation and labels
-- **Tone:** craftsmanship, depth, the sense that the words have weight
-- **No:** stock-photo heroes, gradient buttons, parallax scrolling, animation for its own sake
-
-The Keepers series page should feel like opening a book: intimate, inviting, slightly mysterious.
-
-## Agents
-
-| Agent | Model | Purpose |
-|---|---|---|
-| hp-web-writer | sonnet | Writes marketing copy, page content, series descriptions in the Holdfast Press voice |
-| hp-web-designer | sonnet | HTML/CSS implementation — static, accessible, literary aesthetic |
-| hp-reviewer | sonnet | Reviews published content for quality and voice |
-
-## Slash commands
-
-| Command | Skill | Purpose |
-|---|---|---|
-| `/publish <content>` | workstream-publish | Create or update a page: writer → designer → reviewer → human approve → commit |
-
-## Hard rules
-
-- Static HTML/CSS only unless complexity genuinely demands more
-- No tracking scripts, analytics pixels, or third-party JS without explicit author approval
-- All images must have meaningful alt text
-- No secrets, tokens, or API keys ever committed
-- Content exported from the-keepers/ref/ should be kept in sync with that repo's canonical versions
-
-## What Claude may do autonomously
-
+**Run autonomously:**
 - Read, search, and grep any file in this repo
-- Write and edit HTML, CSS, and content files
-- Run git add, git commit, git push (normal pushes)
+- Write and edit files in this repo
+- `git add`, `git commit`, `git push`
+- `gh issue`, `gh pr`, `gh run` CLI commands
+- `npm install`, `npm run build`, `npm test`
+- `npx` commands for scaffolding and tooling
 
-## Always confirm before
-
-- Adding any JavaScript to the site
-- Changing the visual design direction significantly
-- Publishing the prologue or chapter one (coordinate with the-keepers repo)
-- Deploying changes that affect the GitHub Pages live URL
-
-## Runtime structure
-
-```
-.claude/
-├── agents/           — hp-web-writer, hp-web-designer, hp-reviewer
-├── commands/         — /publish
-├── skills/           — workstream-publish, workstream-document
-├── hooks/            — block-secrets, validate-path, log-tokens, summarize-session
-├── logs/             — sessions.jsonl, tokens.jsonl
-└── settings.json     — Claude Code settings
-```
-
----
-
-## Subagents available in this repo
-
-- `holdfast-press.github.io-engineer` (model: sonnet) — holdfast-press.github.io frontend engineer — TypeScript, React, Vite, component development, tests
-
-User-level agents (every repo): ``triage-lookup``, ``markdown-prose-editor``, ``azurelocal-domain-expert``, ``mkdocs-material-doctor``, ``turner-module-scaffold-engineer``, ``mms-2026-demo-presenter``.
-
-Platform repo agents (when working in `D:\git\platform`): `orchestration-pm`, `security-waf-caf`, `terraform-validator`, `bicep-validator`, `arm-validator`, `ansible-linter`, `powershell-linter`, `reviewer`, `security-reviewer`, `documenter`, `coder`, `planner`, `operator`, `investigator`, `test-writer`, `router`.
+**Always confirm before:**
+- Creating or deleting Azure resources
+- Any `az` CLI write operation that modifies Azure state
+- Running destructive operations
+- Making API calls to external services
+- Installing software
