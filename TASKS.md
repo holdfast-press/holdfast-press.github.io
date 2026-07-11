@@ -20,12 +20,12 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 3. ✅ **[A1-site]** gunner site PWA (`4d4403f`) — static-CACHE_NAME bug was THE stale-iPhone smoking gun; cache-buster + toast shipped.
 
 **🟡 One decision from you, then I run it start to finish:**
-4. **[G2]/[H1]** Re-theme the apps (Gunner warmth / Holdfast literary). I propose 2–3 visual directions each; you pick one.
+4. ✅ **[G2]/[H1]** Re-themes — BOTH DONE 2026-07-11 (gunner `fdb9625`, holdfast `c736668`), shipped best-judgment per user directive; review on device.
 5. **[G6]/[H4]** Kill the email-code login; real cross-device profile (D1). Pick the auth model (passkeys / magic-link / Google) and I build it.
 6. 🔴 **[ADO]** Mirror this board into Azure DevOps — **ON HOLD per user 2026-07-11.**
 
 **🔴 Blocked on you or external provisioning:**
-7. **[G4]/[G10]** Re-publish Story #1 text + audio — your re-read (text is live on the site).
+7. ✅ **[G4]/[G10]** Story #1 text + audio — DONE 2026-07-11, greenlit + published, manifest v6 verified live.
 8. 🔄 **[A2]** AI voice "Listen" (MAI-Voice-2) — **PLANNING ACTIVE 2026-07-11** (user: "needs to be a planning session, NOT on hold"). Agent researching + writing the step-by-step build plan (`docs/plans/ai-voice-mai-voice-2.md`); Foundry provisioning steps included in the plan.
 9. **[verify]** Install / update-prompt / content-sync checks — need your iPhone + iPad + desktop.
 
@@ -55,8 +55,8 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 - **Branding pushed + deploying:** G1 icons, G3/H2 PWA names.
 - **A2 voice** → **one shared Azure AI Foundry** for both brands (research/plan queued).
 
-## 🔴 On hold (awaiting user)
-- **[G4] Re-publish Story #1 to the Gunner app** + **[G10] regenerate its audio** — user will **re-read** the corrected text first (LIVE at <https://gunnerthelab.com/stories/01-the-voyage-home-going-east/>) and confirm it's final. Old-way Azure TTS key is in `storyreader-gunner/.dev.vars` (recoverable).
+## 🟢 Holds resolved 2026-07-11 (later)
+- **G4 + G10 DONE:** user greenlit ("read it, move forward"); full `publish:gunner` ran clean — manifest **v6**, Story #1 corrected text + ~28 min fresh narration + read-along timings live and verified (hash `4eeaaeb4`, all R2 assets HTTP 200, other 41 stories untouched). ⚠️ Follow-up: the publish's push-notify returned **401** (ADMIN_KEY in `.dev.vars` doesn't match the deployed worker secret) — no push fired; fix the key before relying on publish notifications.
 
 ---
 
@@ -80,11 +80,11 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 
 - ✅ **[G1] Distinct app icons** (Gunner+Tiger silhouette) — `54f3047`, pushed/deploying.
 - ✅ **[G3] PWA install name** → "Gunner the Lab" — `dfd8e19`, pushed/deploying, build-verified.
-- 🔄 **[G4] Re-publish edited Story #1 content** — on hold for re-read (see On hold). ✅ Prereq done: `tools/.state/gunner.json` reconstructed from the live manifest (at v5, gitignored/local). When greenlit: `publish:gunner --book 01-the-voyage-home-going-east` to re-TTS Story #1. Note the reconstructed state has no per-chapter `blocks`, so block IDs re-derive on that republish — fine for a rewritten story.
-- ⬜ **[G2] Re-theme** the app to feel more "Gunner the Lab."
+- ✅ **[G4] Re-publish edited Story #1 content** — DONE 2026-07-11, manifest v6 (see Holds resolved). ⚠️ Never use `--book` on a gunner publish: publish.mjs builds the manifest from the filtered list, so `--book` would ship a 1-book manifest and wipe the other 41.
+- ✅ **[G2] Re-theme** — DONE 2026-07-11 (`fdb9625`, deploy run 29159773183 ✅). Warm cream storybook palette from the site, themed form controls, dashed-ink motif, floating update-banner card.
 - ✅ **[G9] Sort UI** (Story order / Chronological / Recently Released / By Collection) — **DONE + LIVE.** Carried `timeframe` through `parse/gunner.mjs` → `publish.mjs` manifest → app `BookEntry`; reworked the Library sort toggle (commit `4c4223a`, deploy run 29157433825 ✅). *By Collection* renders grouped sections ordered by earliest in-world date. Manifest refreshed to **v5** via a surgical merge — added `timeframe` to all 42 AND shipped the recalibrated `publishDate` cadence that had never been republished (fixes *Recently Released*, which was collapsed onto placeholder dates live). Story #1 content/audio/description left untouched (hold honored).
 - ⬜ **[G6] Real login + cross-device profile (D1)** — kill the disliked email-code flow; "thought we fixed this twice, still doesn't show" → verify the account/profile UI actually renders.
-- ⬜ **[G10] Redo Story #1 audio** — on hold for re-read; old-way Azure TTS (`en-US-AndrewMultilingualNeural`) ready.
+- ✅ **[G10] Redo Story #1 audio** — DONE 2026-07-11 with G4 (same publish run; ~28 min, en-US-AndrewMultilingualNeural).
 - ✅ **[A1-app] PWA update notification** — DONE 2026-07-11 (`bbd949d`, pushed/deploying, run 29159115708). Root cause was double: `main.tsx` bypassed vite-plugin-pwa (bare `serviceWorker.register`) AND `sw.ts` called `skipWaiting()` unconditionally on install → new SWs silently hijacked tabs (traced against workbox-window's 200ms waiting heuristic). Now: waiting SW → app-wide top banner "New version available — Refresh" → tap → SKIP_WAITING handshake → reload; hourly + on-focus update checks for installed iOS PWAs.
 - ⬜ **[A2/G5] AI voice for Listen (MAI-Voice-2)** — multi-voice listen-only; shared Foundry (decided). Keep existing voice for read-along.
 - ⬜ **[G11] Story #1 art** — scene list re-verified against the FINAL text 2026-07-11 (⚠️ NO Horse House — that beat was cut in the rewrite and parked for a future rural story; do not illustrate it): (1) Dad on the orchard bench watching the boys pick apples, (2) Bear's head in Dad's lap, low gold sun, West Texas highway, (3) dusk wildlife parade (skunk, armadillo, raccoons, deer, owl) in the headlights, (4) Bear's first glad loop of the dark front yard, (5) headlights sweeping farmhouse/barn/pond on arrival. Plus fix stale `resources/Illustration_Prompts_All_Stories.md`. *(Art lives in the site repo but feeds this app's covers.)*
@@ -93,7 +93,7 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 ## 🟪 Surface 3 — app.holdfastpress.com  (Holdfast **StoryReader app** PWA) — *primary Holdfast focus*
 
 - ✅ **[H2] PWA install name** → "Holdfast Press" — `81b2e83`, pushed/deploying.
-- ⬜ **[H1] Re-theme** the app to feel more "Holdfast Press." *(Primary Holdfast work.)*
+- ✅ **[H1] Re-theme** — DONE 2026-07-11 (`c736668`, pushed/auto-deploying). Warm ink-and-parchment palette (was cool blue-charcoal), WCAG contrast hand-verified both themes, brand-locked Ember/Bone/Rune kept byte-exact, real Cormorant italic added for the tagline, splash/OS chrome colors synced.
 - ⬜ **[H4] Real login + cross-device profile (D1)** — same as G6.
 - ✅ **[A1-app] PWA update notification** — DONE 2026-07-11 (`3c948e8`, pushed/deploying). Root cause was worse than "no UI": `sw.ts` called `skipWaiting()` unconditionally on install, so new SWs silently hijacked open tabs (stale JS vs new SW race). Now: waiting SW → top banner "New version available — Refresh" → tap → SKIP_WAITING → reload. Hourly + on-focus update checks added for iOS. Same bug likely existed in the gunner twin (its agent is on it).
 - ⬜ **[A2/H3] AI voice for Listen (MAI-Voice-2)** — shared Foundry (decided).
@@ -106,6 +106,8 @@ There are **three installable PWA surfaces**. Each is a *separate* PWA with its 
 - ✅ **[G7/H5] Org + repo branding** — both orgs: name/description/avatar + polished repo descriptions. (Only social-preview images are web-UI-only.)
 - ✅ **[H7] Repo visibility** — the-keepers private; all repos audited.
 - ✅ **[G8] Per-repo agents** — story-writer + engineer agents exist across repos. **[H6]** `hp-writer` verified (Lewis/Tolkien/Lawhead).
+- 🔄 **[copy] Em-dash purge, both reader apps** — flagged by both re-theme agents 2026-07-11: em-dashes survive in About/Settings/Book/Home/PreviewBanner/DownloadButton (+ holdfast sw.ts push text, CHANGELOG/ROADMAP rendered into About). Hard rule violation; agents sweeping both repos now. (Scene-break `— · —` glyph in BlockRenderer is decorative/aria-hidden — exempt.)
+- ⬜ **[ops] Fix publish push-notify 401** — sync ADMIN_KEY in `storyreader-gunner/.dev.vars` with the deployed worker secret (or rotate both) so `publish:gunner` can push-notify again.
 - 🔴 **ADO** — mirror open items into Azure DevOps (`AB#<id>`) — **ON HOLD per user 2026-07-11** ("hold on this one"). Do not create work items until released.
 
 ---
