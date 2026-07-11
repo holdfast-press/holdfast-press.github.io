@@ -14,10 +14,10 @@ Status key: ⬜ not started · 🔄 in progress · ✅ done · 💬 needs a deci
 
 Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting; surface 🟡/🔴 as a batch.
 
-**🟢 Autonomous — build + verify + ship without waiting:**
-1. **[A1-app]** PWA "new version, refresh" prompt + clean SW update, BOTH reader apps (`vite-plugin-pwa` is already `registerType:'prompt'`, just no UI). Directly targets the "old story on my iPhone" symptom.
-2. ✅ **[content]** Verify `publish:holdfast` — DONE 2026-07-11, fully healthy/zero drift (see Surface 3 for detail).
-3. **[A1-site]** Gunner **site**-PWA update notification + SW cache refresh (separate PWA from the app).
+**🟢 Autonomous — ALL DONE 2026-07-11 (wave 1, 4 parallel agents):**
+1. ✅ **[A1-app]** update prompt BOTH reader apps (gunner `bbd949d`, holdfast `3c948e8`) — both had a silent-SW-hijack bug, fixed.
+2. ✅ **[content]** `publish:holdfast` verified — fully healthy/zero drift.
+3. ✅ **[A1-site]** gunner site PWA (`4d4403f`) — static-CACHE_NAME bug was THE stale-iPhone smoking gun; cache-buster + toast shipped.
 
 **🟡 One decision from you, then I run it start to finish:**
 4. **[G2]/[H1]** Re-theme the apps (Gunner warmth / Holdfast literary). I propose 2–3 visual directions each; you pick one.
@@ -72,7 +72,7 @@ There are **three installable PWA surfaces** (plus one minor landing site). Each
 
 - ✅ Confirmed it IS an installable PWA (`public/site.webmanifest` + `public/sw.js`, update-detection in `BaseHead.astro`).
 - ✅ Story #1 corrected text **live on the site** (`78ca44d`, Pages deploy succeeded).
-- ⬜ **[A1-site] PWA update notification** — installed site PWA must advertise "new version — refresh" and the SW must cleanly replace stale cache. (Likely cause of "old story on my iPhone.")
+- ✅ **[A1-site] PWA update notification** — DONE 2026-07-11 (`4d4403f`, pushed, Pages deploying). **Smoking gun for "old story on my iPhone" found:** `sw.js` had a static `CACHE_NAME` (`gunnerthelab-v2`) and its bytes never changed between deploys, so installed browsers NEVER re-checked the SW → precached shell stale indefinitely. Fix: build-time cache-buster (Astro `astro:build:done` hook stamps `CACHE_NAME` with the commit SHA) + "Site updated. Tap to refresh." toast + SKIP_WAITING handshake + on-focus update nudge for iOS.
 - ⬜ **[verify] Update/propagation check** — after a site push, confirm the *installed* PWA (iPhone + iPad + desktop) actually shows the new content, not an SW-cached old copy.
 - ⬜ **[verify] Install check** — confirm install works + icon/name/splash correct on iOS, iPadOS, desktop.
 
