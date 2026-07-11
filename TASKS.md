@@ -16,7 +16,7 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 
 **🟢 Autonomous — build + verify + ship without waiting:**
 1. **[A1-app]** PWA "new version, refresh" prompt + clean SW update, BOTH reader apps (`vite-plugin-pwa` is already `registerType:'prompt'`, just no UI). Directly targets the "old story on my iPhone" symptom.
-2. **[content]** Verify `publish:holdfast` carries The Keepers chapters correctly (parse → JSON → R2 → manifest).
+2. ✅ **[content]** Verify `publish:holdfast` — DONE 2026-07-11, fully healthy/zero drift (see Surface 3 for detail).
 3. **[A1-site]** Gunner **site**-PWA update notification + SW cache refresh (separate PWA from the app).
 
 **🟡 One decision from you, then I run it start to finish:**
@@ -97,7 +97,7 @@ There are **three installable PWA surfaces** (plus one minor landing site). Each
 - ⬜ **[H4] Real login + cross-device profile (D1)** — same as G6.
 - ⬜ **[A1-app] PWA update notification** — same as Surface 2.
 - ⬜ **[A2/H3] AI voice for Listen (MAI-Voice-2)** — shared Foundry (decided).
-- ⬜ **[content] Verify The Keepers publish pipeline** (`publish:holdfast`) carries chapters correctly to the app.
+- ✅ **[content] Verify The Keepers publish pipeline** — audited 2026-07-11 (read-only): **fully healthy, zero drift** (manuscript → site repo → parse → state → live manifest → R2). 2 chapters live (prologue f58735e1, chapter-one f5373706), libraryVersion 5 = 5, audio 2/2, all 7 R2 assets HTTP 200. ⚠️ Fragility: `tools/.state/holdfast.json` is gitignored + untracked (same class as gunner's earlier loss) — exists only on this disk. Chapter-two flow: sync manuscript → site repo `src/pages/the-keepers/` first (that's the publish source), then dry-run, then `publish:holdfast`.
 - ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
 
 ## ⬜ Surface 4 (minor) — holdfast-press.github.io  (Holdfast landing site)
