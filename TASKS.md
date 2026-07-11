@@ -22,7 +22,7 @@ Grouped by how much input each needs. Work 🟢 top-to-bottom without prompting;
 **🟡 One decision from you, then I run it start to finish:**
 4. **[G2]/[H1]** Re-theme the apps (Gunner warmth / Holdfast literary). I propose 2–3 visual directions each; you pick one.
 5. **[G6]/[H4]** Kill the email-code login; real cross-device profile (D1). Pick the auth model (passkeys / magic-link / Google) and I build it.
-6. **[ADO]** Mirror this board into Azure DevOps — needs the Gunner ADO project call (separate project or shared with Holdfast?).
+6. 🔴 **[ADO]** Mirror this board into Azure DevOps — **ON HOLD per user 2026-07-11.**
 
 **🔴 Blocked on you or external provisioning:**
 7. **[G4]/[G10]** Re-publish Story #1 text + audio — your re-read (text is live on the site).
@@ -100,16 +100,13 @@ There are **three installable PWA surfaces** (plus one minor landing site). Each
 - ✅ **[content] Verify The Keepers publish pipeline** — audited 2026-07-11 (read-only): **fully healthy, zero drift** (manuscript → site repo → parse → state → live manifest → R2). 2 chapters live (prologue f58735e1, chapter-one f5373706), libraryVersion 5 = 5, audio 2/2, all 7 R2 assets HTTP 200. ⚠️ Fragility: `tools/.state/holdfast.json` is gitignored + untracked (same class as gunner's earlier loss) — exists only on this disk. Chapter-two flow: sync manuscript → site repo `src/pages/the-keepers/` first (that's the publish source), then dry-run, then `publish:holdfast`.
 - ⬜ **[verify]** Install + update-prompt + content-sync check on iPhone/iPad/desktop.
 
-## ⬜ Surface 4 (minor) — holdfast-press.github.io  (Holdfast landing site)
-- ⬜ Keep as a simple landing that points to the app; **no rich-PWA investment** (reader-app is the Holdfast product).
-
 ---
 
 ## 🧩 Cross-cutting / infra (mostly done)
 - ✅ **[G7/H5] Org + repo branding** — both orgs: name/description/avatar + polished repo descriptions. (Only social-preview images are web-UI-only.)
 - ✅ **[H7] Repo visibility** — the-keepers private; all repos audited.
 - ✅ **[G8] Per-repo agents** — story-writer + engineer agents exist across repos. **[H6]** `hp-writer` verified (Lewis/Tolkien/Lawhead).
-- ⬜ **ADO** — mirror all ⬜/🔄 items above into Azure DevOps work items (`AB#<id>`).
+- 🔴 **ADO** — mirror open items into Azure DevOps (`AB#<id>`) — **ON HOLD per user 2026-07-11** ("hold on this one"). Do not create work items until released.
 
 ---
 
